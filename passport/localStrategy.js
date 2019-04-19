@@ -11,7 +11,7 @@ passport.use(new LocalStrategy({
     User.findOne({ username })
     .then(foundUser => {
       if (!foundUser) {
-        done(null, false, { message: 'Incorrect username' });
+        done(null, false, { message: 'User not found' });
         return;
       }
 

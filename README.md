@@ -7,7 +7,7 @@ home '/'
 AUTH
 /auth/signup
 /auth/login
-/auth/profile
+/auth/:id
 /auth/edit
 
 EVENTS

@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     res.render('index', {events});
   })
   .catch(err => {
-    console.error("Error while finding movies", err)
+    console.error("Error while finding events", err)
   });
 });
 

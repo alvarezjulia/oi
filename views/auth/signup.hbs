@@ -1,13 +1,16 @@
-<div class="profile-container">
+<div class="profile-container" id="signup">
   <h2 class="title">Signup</h2>
 
-  <form action="/auth/signup" method="POST" class="input-form"id="form-container">
-    <label class="form-label" for="username">Username</label>
-    <input id="username" type="text" name="username" placeholder="JonSnow">
+  <form action="/auth/signup" method="POST" class="input-form" id="form-container">
+    <div class="username-wrapper">
+      <label class="form-label" for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="Your username">
+    </div>
+    <div class="password-wrapper">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+    </div>
 
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Your password">
-  
     {{#if message }}
     <div class="error-message">{{ message }}</div>
     {{/if}}
