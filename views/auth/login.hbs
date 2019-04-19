@@ -1,6 +1,4 @@
-
-<h2>Login</h2>
-
+{{!-- 
 <form action="/auth/login" method="POST" id="form-container">
   <label for="username">Username</label>
   <input id="username" type="text" name="username" placeholder="JonSnow">
@@ -16,10 +14,32 @@
 
   <br><br>
 
-  <button>Login</button>
+  <button>Signup</button>
 
   <p class="account-message">
     Don't have an account yet?
     <a href="/auth/signup">Signup</a>
   </p>
-</form>
+</form> --}}
+
+
+<div class="profile-container">
+  <h2 class="title">Login</h2>
+
+  <form action="/auth/login" method="POST" class="input-form"id="form-container">
+    <label class="form-label" for="username">Username</label>
+    <input id="username" type="text" name="username" placeholder="JonSnow">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" placeholder="Your password">
+  
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <button>Create account</button>
+
+    <p class="account-message">Don't have an account yet?</p>
+    <a href="/auth/signup">Sign Up!</a>
+  </form>
+</div>

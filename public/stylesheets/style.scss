@@ -1,20 +1,30 @@
-/*
-body {
-    padding: 50px;
-    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-}
-
-a {
-    color: #00b7ff;
-}
-*/
 
 body {
     color: #ffffff;
+    font-family: Lato;
+    font-size: 1.4rem;
     background: #000000;
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+//////////////////////////////////// Nav bar
 .nav-bar {
     color: white;
     font-family: Lato;
@@ -46,6 +56,7 @@ ion-icon {
     align-self: center;
 }
 
+//////////////////////////////////// User bar
 .user-bar {
     color: #ffffff;
     font-family: Lato;
@@ -64,6 +75,7 @@ ion-icon {
     text-decoration: none;
 }
 
+//////////////////////////////////// Index.hbs
 .main-container {
     display: flex;
 }
@@ -71,7 +83,7 @@ ion-icon {
 .event-container {
     color: #ffffff;
     font-family: Lato;
-    background-color: #e9b83a;
+    background-color: #0e9aa7;
     width: 100%;
     height: 200px;
     display: flex;
@@ -101,4 +113,41 @@ ion-icon {
     font-size: 1rem;
     font-weight: 300;
     margin: 0px 10px;
+}
+
+//////////////////////////////////// Signup.hbs / Login.hbs
+
+.profile-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-container .title {
+    margin-bottom: 40px;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+button {
+    margin: 20px;
+}
+
+#form-container a {
+    font-size: 2rem;
+    text-decoration: underline;
 }

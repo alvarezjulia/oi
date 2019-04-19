@@ -6,7 +6,6 @@ const Event = require("../models/Event");
 router.get('/', (req, res, next) => {
   Event.find({})
   .then (events => {
-    console.log(events)
     res.render('index', {events});
   })
   .catch(err => {
