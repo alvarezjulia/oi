@@ -1,23 +1,14 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
-<div class="event-container" id="event-container">
-      <div class="location">location</div>
-      <div class="event">event</div>
-      <div class="info-wrapper">
-        <div class="door">door:</div>
-        <div class="begin">begin:</div>
-        <div class="end">end:</div>
-        <div class="entry">entry:</div>
-      </div>
+{{#each events}}
+<div class="event-container" id="{{this._id}}">
+  <div class="location">{{location}}</div>
+  <div class="event">{{event}}</div>
+  <div class="info-wrapper">
+    <div class="door">door: {{door}}</div>
+    <div class="begin">begin: {{begin}}</div>
+    <div class="end">end: {{end}}</div>
+    <div class="entry">entry: {{entry}}</div>
   </div>
-  
-  <div class="event-container" id="event-container">
-      <div class="location">location</div>
-      <div class="event">event</div>
-      <div class="info-wrapper">
-        <div class="door">door:</div>
-        <div class="begin">begin:</div>
-        <div class="end">end:</div>
-        <div class="entry">entry:</div>
-      </div>
-  </div>
+</div>
+{{/each}}
