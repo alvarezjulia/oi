@@ -2,12 +2,24 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const eventSchema = new Schema({
-    location: String,
-    event: String,
-    door: String,
-    begin: String,
-    end: String,
-    entry: String
+    location: {
+        type: String
+    },
+    event: {
+        type: String
+    },
+    door: {
+        type: String
+    },
+    begin: {
+        type: String
+    },
+    end: {
+        type: String
+    },
+    entry: {
+        type: String
+    }
 })
 
 const Event = mongoose.model('Event', eventSchema)
