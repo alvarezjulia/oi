@@ -6,6 +6,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const Event = require("../models/Event")
 
 const bcryptSalt = 10;
 
@@ -18,24 +19,50 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-let users = [
+// let users = [
+//   {
+//     username: "alice",
+//     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+//   },
+//   {
+//     username: "bob",
+//     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+//   }
+let events = [
   {
-    username: "alice",
-    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+    location: "ClubX",
+    event: "Awesome Techno Party",
+    door: "20:00",
+    begin: "21:30",
+    end: "08:00",
+    entry: "3.50"
   },
   {
-    username: "bob",
-    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+    location: "Berghain",
+    event: "Fake Party",
+    door: "23:00",
+    begin: "23:00",
+    end: "08:00",
+    entry: "10"
+  },
+  {
+    location: "Gaterwate",
+    event: "Oi release party",
+    door: "18:00",
+    begin: "20:00",
+    end: "21:00",
+    entry: "1000"
   }
 ]
 
-User.deleteMany()
+
+Event.deleteMany()
 .then(() => {
-  return User.create(users)
+  return Event.create(events)
 })
-.then(usersCreated => {
-  console.log(`${usersCreated.length} users created with the following id:`);
-  console.log(usersCreated.map(u => u._id));
+.then(eventsCreated => {
+  console.log(`${eventsCreated.length} events created with the following id:`);
+  console.log(eventsCreated.map(u => u._id));
 })
 .then(() => {
   // Close properly the connection to Mongoose
