@@ -9,6 +9,7 @@ AUTH
 /auth/login
 /auth/:id
 /auth/edit
+/auth/delete
 
 EVENTS
 /yourevents

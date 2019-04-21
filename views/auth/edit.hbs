@@ -1,0 +1,27 @@
+<h2>Edit your profile</h2>
+
+
+<form action="/auth/edit" method="post">
+
+  <label for="username">Username: </label>
+  <input type="text" name="username" value="{{username}}">
+  <br><br>
+  <label for="email">Email</label>
+  <input type="text" name="email" value="{{email}}">
+
+  <br><br>
+
+  <button type="submit">Save changes</button>
+
+</form>
+
+<br>
+
+<button><a href="/auth/profile">Cancel</a></button>
+
+<br><br>
+
+
+<form action="/auth/delete" method="post">
+  <button type="submit">Delete profile</button>
+</form>

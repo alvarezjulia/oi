@@ -104,7 +104,7 @@ ion-icon {
 .profile-container .title {
   margin-bottom: 40px; }
 
-#form-container, .username-wrapper, .password-wrapper {
+#form-container, .username-wrapper, .password-wrapper, .email-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center; }
