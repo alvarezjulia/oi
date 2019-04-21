@@ -99,11 +99,15 @@ router.post('/edit', (req, res) => {
         })
 })
 
+router.get('/delete', (req, res) => {
+    res.render('auth/delete')
+})
+
 router.post('/delete', (req, res) => {
     const { _id } = req.user
     User.findByIdAndRemove({ _id })
-        .then(user => {
-            res.redirect('/')
+        .then(() => {
+            res.redirect('/auth/delete')
         })
         .catch(err => {
             console.error(err)

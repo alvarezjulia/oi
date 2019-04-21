@@ -4,4 +4,6 @@
 <h4>Email: {{this.email}}</h4>
 
 <a href="/auth/edit">Edit profile</a>
-<a href="/auth/delete">Delete profile</a>
+<form action="/auth/delete" method="post">
+  <button type="submit">Delete profile</button>
+</form>
