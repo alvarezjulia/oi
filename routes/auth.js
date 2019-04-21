@@ -28,6 +28,7 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', (req, res, next) => {
     const username = req.body.username
     const password = req.body.password
+    const email = req.body.email
     if (username === '' || password === '') {
         res.render('auth/signup', { message: 'Indicate username and password' })
         return
@@ -44,6 +45,7 @@ router.post('/signup', (req, res, next) => {
 
         const newUser = new User({
             username,
+            email,
             password: hashPass
         })
 
@@ -65,12 +67,46 @@ router.get('/logout', (req, res) => {
 
 router.get('/profile', (req, res) => {
     const { _id } = req.user
-    User.find({ _id })
+    User.findById({ _id })
         .then(user => {
-            res.render('auth/profile', user[0])
+            res.render('auth/profile', user)
         })
         .catch(err => {
             console.error('Error while displaying profile', err)
+        })
+})
+
+router.get('/edit', (req, res) => {
+    const { _id } = req.user
+    User.findById({ _id })
+        .then(user => {
+            res.render('auth/edit', user)
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
+router.post('/edit', (req, res) => {
+    const { _id } = req.user
+    const { username, email } = req.body
+    User.findByIdAndUpdate({ _id }, { username, email })
+        .then(() => {
+            res.redirect('/auth/profile')
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
+router.post('/delete', (req, res) => {
+    const { _id } = req.user
+    User.findByIdAndRemove({ _id })
+        .then(user => {
+            res.redirect('/')
+        })
+        .catch(err => {
+            console.error(err)
         })
 })
 
