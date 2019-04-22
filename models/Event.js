@@ -18,7 +18,7 @@ const eventSchema = new Schema({
         type: String
     },
     entry: {
-        type: String
+        type: Number
     }
 })
 
