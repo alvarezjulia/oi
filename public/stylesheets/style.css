@@ -162,7 +162,8 @@ button:hover {
 .col-3-wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: space-around; }
 
 .col-3 {
   text-align: center; }
