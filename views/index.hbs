@@ -1,5 +1,6 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
+
 {{#each events}}
 <div class="event-container" id="{{this._id}}">
   <div class="location">{{location}}</div>
@@ -8,7 +9,7 @@
     <div class="door">door: {{door}}</div>
     <div class="begin">begin: {{begin}}</div>
     <div class="end">end: {{end}}</div>
-    <div class="entry">entry: {{entry}}</div>
+    <div class="entry">entry: {{logOb}}</div>
   </div>
 </div>
 {{/each}}
