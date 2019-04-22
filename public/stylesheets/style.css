@@ -9,6 +9,9 @@ a {
   text-decoration: none;
   color: #ffffff; }
 
+h2 {
+  text-align: center; }
+
 .nav-bar {
   color: white;
   font-family: Lato;
