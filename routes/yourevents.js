@@ -4,8 +4,17 @@ const Event = require('../models/Event')
 const User = require('../models/User')
 
 router.get('/yourevents', (req, res) => {
-    // const { _id } = req.user
-    res.render('yourevents/yourevents')
+    const { _id } = req.user
+
+    User.findById({ _id })
+        .populate('addedEvents')
+        .then(user => {
+            const yourEvents = user.addedEvents
+            res.render('yourevents/yourevents', { yourEvents })
+        })
+        .catch(err => {
+            console.error(err)
+        })
 })
 
 router.get('/yourevents/add', (req, res) => {

@@ -1,5 +1,17 @@
 <h2>Your events</h2>
 
+{{#each yourEvents}}
+<div class="event-container" id="{{this._id}}">
+  <div class="location">{{location}}</div>
+  <div class="event">{{event}}</div>
+  <div class="info-wrapper">
+    <div class="door">door: {{door}}</div>
+    <div class="begin">begin: {{begin}}</div>
+    <div class="end">end: {{end}}</div>
+    <div class="entry">entry: {{entry}}</div>
+  </div>
+</div>
+{{/each}}
 
 
 <form action="/yourevents/add" method="get">
