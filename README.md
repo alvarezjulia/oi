@@ -14,4 +14,5 @@ AUTH
 EVENTS
 /yourevents
 /yourevents/add
-/yourevents/:id
+/yourevents/edit/:id
+/yourevents/delete/:id

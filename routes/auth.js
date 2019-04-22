@@ -52,7 +52,7 @@ router.post('/signup', (req, res, next) => {
         newUser
             .save()
             .then(() => {
-                res.redirect('/auth/profile')
+                res.redirect('/')
             })
             .catch(err => {
                 res.render('auth/signup', { message: 'Something went wrong' })
@@ -99,11 +99,15 @@ router.post('/edit', (req, res) => {
         })
 })
 
+router.get('/delete', (req, res) => {
+    res.render('auth/delete')
+})
+
 router.post('/delete', (req, res) => {
     const { _id } = req.user
     User.findByIdAndRemove({ _id })
-        .then(user => {
-            res.redirect('/')
+        .then(() => {
+            res.redirect('/auth/delete')
         })
         .catch(err => {
             console.error(err)

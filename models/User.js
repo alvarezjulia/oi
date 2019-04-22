@@ -5,7 +5,13 @@ const userSchema = new Schema(
     {
         username: String,
         email: String,
-        password: String
+        password: String,
+        addedEvents: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Event'
+            }
+        ]
     },
     {
         timestamps: {

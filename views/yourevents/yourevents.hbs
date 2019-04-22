@@ -1,0 +1,30 @@
+<h2>Your events</h2>
+
+{{#each yourEvents}}
+<div class="col-3-wrapper event-container">
+  <div class="col-3"></div>
+  <div class="col-3" id="{{this._id}}">
+    <div class="location">{{location}}</div>
+    <div class="event">{{event}}</div>
+    <div class="info-wrapper">
+      <div class="door">door: {{door}}</div>
+      <div class="begin">begin: {{begin}}</div>
+      <div class="end">end: {{end}}</div>
+      <div class="entry">entry: {{entry}}</div>
+    </div>
+  </div>
+  <div class="col-3">
+    <form action="/yourevents/edit/{{_id}}" method="get">
+      <button>Edit event</button>
+    </form>
+    <form action="/yourevents/delete/{{_id}}" method="post">
+      <button>Delete event</button>
+    </form>
+  </div>
+</div>
+{{/each}}
+
+
+<form action="/yourevents/add" method="get">
+  <button>Add event</button>
+</form>

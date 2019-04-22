@@ -132,7 +132,7 @@ ion-icon {
   display: flex; }
 
 .profile-container {
-  height: calc(100vh - 174px - 100px);
+  min-height: calc(100vh - 174px - 100px);
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -150,10 +150,16 @@ ion-icon {
 #edit-profile {
   background-color: #3e4444; }
 
+#edit-event {
+  background-color: #ff5733; }
+
 .profile-container .title {
   margin-bottom: 40px; }
 
-#form-container, .username-wrapper, .password-wrapper, .email-wrapper {
+#form-container,
+.username-wrapper,
+.password-wrapper,
+.email-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -161,7 +167,9 @@ ion-icon {
 label {
   margin-bottom: 8px; }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-size: 1rem;
   margin-bottom: 30px;
   padding: 10px; }
@@ -173,5 +181,13 @@ input, select, textarea {
 .error-message {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #000000; }
+
+.col-3-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.col-3 {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
