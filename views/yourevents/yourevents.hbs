@@ -10,6 +10,11 @@
     <div class="end">end: {{end}}</div>
     <div class="entry">entry: {{entry}}</div>
   </div>
+  <div>
+    <form action="/yourevents/delete/{{_id}}" method="post">
+      <button>Delete event</button>
+    </form>
+  </div>
 </div>
 {{/each}}
 

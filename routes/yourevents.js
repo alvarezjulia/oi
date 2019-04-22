@@ -38,4 +38,15 @@ router.post('/yourevents/add', (req, res) => {
         })
 })
 
+router.post('/yourevents/delete/:id', (req, res) => {
+    const _id = req.params.id
+    Event.findByIdAndRemove({ _id })
+        .then(() => {
+            res.redirect('/yourevents')
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
 module.exports = router

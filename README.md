@@ -15,3 +15,4 @@ EVENTS
 /yourevents
 /yourevents/add
 /yourevents/:id
+/yourevents/delete/:id
