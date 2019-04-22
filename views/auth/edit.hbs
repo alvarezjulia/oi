@@ -1,27 +1,24 @@
-<h2>Edit your profile</h2>
+<div class="profile-container" id="edit-profile">
 
+  <h2>Edit your profile</h2>
 
-<form action="/auth/edit" method="post">
+  <form action="/auth/edit" method="post" class="input-form" id="form-container">
+    <label for="username">Username: </label>
+    <input type="text" name="username" value="{{username}}">
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{email}}">
 
-  <label for="username">Username: </label>
-  <input type="text" name="username" value="{{username}}">
-  <br><br>
-  <label for="email">Email</label>
-  <input type="text" name="email" value="{{email}}">
+    <div class="button-wrapper">
+      <button type="submit">Save changes</button>
+  </form>
 
-  <br><br>
+  <form action="/auth/profile" method="get" class="input-form" id="form-container">
+    <button>Cancel</button>
+  </form>
 
-  <button type="submit">Save changes</button>
+  <form action="/auth/delete" method="post" class="input-form" id="form-container">
+    <button type="submit">Delete profile</button>
+  </form>
+</div>
 
-</form>
-
-<br>
-
-<button><a href="/auth/profile">Cancel</a></button>
-
-<br><br>
-
-
-<form action="/auth/delete" method="post">
-  <button type="submit">Delete profile</button>
-</form>
+</div>

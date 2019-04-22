@@ -12,10 +12,9 @@ a {
 .nav-bar {
   color: white;
   font-family: Lato;
-  font-size: 2rem;
-  font-size: calc(100% + 1.8vw);
+  font-size: 3rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-shrink: 4;
   padding: 20px 0px; }
@@ -44,6 +43,7 @@ ion-icon {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-wrap: wrap;
   padding: 20px 50px 20px 0px;
   margin-bottom: 3px; }
 
@@ -89,7 +89,11 @@ ion-icon {
   font-weight: 300;
   margin: 0px 10px; }
 
+.button-wrapper {
+  display: flex; }
+
 .profile-container {
+  height: calc(100vh - 174px - 100px);
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -100,6 +104,12 @@ ion-icon {
 
 #signup {
   background-color: #03396c; }
+
+#profile {
+  background-color: #6b5b95; }
+
+#edit-profile {
+  background-color: #3e4444; }
 
 .profile-container .title {
   margin-bottom: 40px; }

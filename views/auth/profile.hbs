@@ -1,7 +1,17 @@
-<h2>Your profile</h2>
+<div class="profile-container" id="profile">
 
-<h4>Username: {{this.username}}</h4>
-<h4>Email: {{this.email}}</h4>
+  <h2 class="title">Your profile</h2>
 
-<a href="/auth/edit">Edit profile</a>
-<a href="/auth/delete">Delete profile</a>
+  <h4>Username: {{this.username}}</h4>
+  <h4>Email: {{this.email}}</h4>
+
+  <div class="button-wrapper">
+    <form action="/auth/edit">
+      <button>edit profile</button>
+    </form>
+    <form action="/auth/delete">
+      <button>delete account</button>
+    </form>
+  </div>
+
+</div>
