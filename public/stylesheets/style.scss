@@ -21,6 +21,24 @@ h2 {
 h3 {
 }
 
+button {
+    color: #03396c ;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 15px;
+    margin: 20px;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+button:hover {
+    color: #000000;
+    border-radius: 40px;
+    border-color: #000000;
+    transition: all 0.3s ease 0s;
+}
+
 //////////////////////////////////// Nav bar
 .nav-bar {
     color: white;
@@ -54,17 +72,43 @@ ion-icon {
 }
 
 //////////////////////////////////// User bar
+
 .user-bar {
     color: #ffffff;
     font-family: Lato;
     font-size: 1.8rem;
     background-color: #2f5858;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 50px 20px 0px;
+    padding: 20px 50px 20px 50px;
     margin-bottom: 3px;
+}
+///START: "Filter Locations"  button
+.filter-button-wrapper .btn {
+    margin: 20px 50px;
+}
+.filter-button-wrapper {
+    position: absolute;
+    top: 112px;
+}
+
+.user-filter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-wrapper {
+    margin: 0;
+    height: 50px;
+    width: 220px;
+}
+///END: "Filter Locations"  button
+
+.user-menu-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .user-bar a {
@@ -74,6 +118,13 @@ ion-icon {
 }
 
 //////////////////////////////////// Index.hbs
+
+//Collapse element for location filter
+.filter-locations {
+    display: flex;
+}
+
+
 .main-container {
     display: flex;
 }
@@ -162,24 +213,6 @@ input, select, textarea  {
     font-size: 1rem;
     margin-bottom: 30px;
     padding: 10px;
-}
-
-button {
-    color: #03396c ;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 15px;
-    margin: 20px;
-    border: 2px solid #000000;
-    border-radius: 2px;
-    display: inline-block;
-}
-
-button:hover {
-    color: #000000;
-    border-radius: 40px;
-    border-color: #000000;
-    transition: all 0.3s ease 0s;
 }
 
 #form-container a {
