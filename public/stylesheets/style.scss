@@ -205,9 +205,10 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .col-3 {
+    width: 30vw;
     text-align: center;
 }
