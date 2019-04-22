@@ -1,5 +1,17 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
+<div class="filter-button-wrapper">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+    aria-expanded="false" aria-controls="collapseExample">
+    Filter locations
+  </button>
+</div>
+<div class="collapse" id="collapseExample">
+  <div class="filter-locations">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
 
 {{#each events}}
 <div class="event-container" id="{{this._id}}">
