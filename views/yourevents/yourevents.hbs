@@ -11,6 +11,11 @@
     <div class="entry">entry: {{entry}}</div>
   </div>
   <div>
+    <form action="/yourevents/edit/{{_id}}" method="get">
+      <button>Edit event</button>
+    </form>
+  </div>
+  <div>
     <form action="/yourevents/delete/{{_id}}" method="post">
       <button>Delete event</button>
     </form>

@@ -1,0 +1,27 @@
+<div class="profile-container" id="edit-profile">
+  <h2>Edit your event</h2>
+
+  <form action="/yourevents/edit/{{_id}}" method="post">
+
+    <label for="location">Location: </label>
+    <input type="text" name="location" value="{{location}}">
+
+    <label for="event">Event name: </label>
+    <input type="text" name="event" value="{{event}}">
+
+    <label for="door">Door: </label>
+    <input type="time" name="door" value="{{door}}">
+
+    <label for="begin">Begin: </label>
+    <input type="time" name="begin" value="{{begin}}">
+
+    <label for="end">End: </label>
+    <input type="time" name="end" value="{{end}}">
+
+    <label for="entry">Entry: </label>
+    <input type="number" name="entry" value="{{entry}}">
+
+    <button>Save changes</button>
+  </form>
+
+</div>

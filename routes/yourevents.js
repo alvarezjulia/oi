@@ -49,4 +49,16 @@ router.post('/yourevents/delete/:id', (req, res) => {
         })
 })
 
+router.get('/yourevents/edit/:id', (req, res) => {
+    const _id = req.params.id
+    console.log(_id)
+    Event.findById({ _id })
+        .then(event => {
+            res.render('yourevents/edit', event)
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
 module.exports = router
