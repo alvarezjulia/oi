@@ -2,10 +2,10 @@ const express = require('express')
 const router = express.Router()
 const Event = require('../models/Event')
 const User = require('../models/User')
+const Location = require('../models/Location')
 
 router.get('/yourevents', (req, res) => {
     const { _id } = req.user
-    console.log(Event)
     User.findById({ _id })
         .populate('addedEvents')
         .then(user => {
@@ -18,17 +18,29 @@ router.get('/yourevents', (req, res) => {
 })
 
 router.get('/yourevents/add', (req, res) => {
-    res.render('yourevents/add')
+    Location.find({})
+        .then(locationNames => {
+            res.render('yourevents/add', { locationNames })
+        })
 })
 
 router.post('/yourevents/add', (req, res) => {
     const { _id } = req.user
     const { date, event, door, begin, end, price } = req.body
-    const { location } = req.body
+    const locationID = req.body.location
     Event.create({ date, event, door, begin, end, price })
         .then(event => {
             let eventArr = req.user.addedEvents
             eventArr.push(event._id)
+
+            console.log("location ID")
+            console.log(locationID)
+            console.log("event ID")
+            console.log(event._id)
+
+            // const eventID = event._id
+            // Event.findById({ eventID })
+            //     .populate('location')
 
             User.findByIdAndUpdate({ _id }, { addedEvents: eventArr }).then(() => {
                 res.redirect('/yourevents')
@@ -52,9 +64,12 @@ router.post('/yourevents/delete/:id', (req, res) => {
 
 router.get('/yourevents/edit/:id', (req, res) => {
     const _id = req.params.id
-    Event.findById({ _id })
-        .then(event => {
-            res.render('yourevents/edit', event)
+    Location.find({})
+        .then(locationNames => {
+            Event.findById({ _id })
+                .then(event => {
+                    res.render('yourevents/edit', { event, locationNames })
+                })
         })
         .catch(err => {
             console.error(err)

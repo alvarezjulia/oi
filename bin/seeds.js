@@ -97,6 +97,36 @@ let locations = [
     GPS: "129803120983",
     address: "teststreet1234",
   },
+  {
+    city: "Berlin",
+    name: "Sisyphos",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Watergate",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "About Blank",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Golden Gate",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Gretchen",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
 ]
 
 

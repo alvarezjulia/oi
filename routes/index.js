@@ -10,9 +10,8 @@ router.get('/', (req, res, next) => {
   Location.find({})
     .then(locationNames => {
       Event.find({})
-      // .populate('location')
-      .then(events => {
-          res.render('index', {events, locationNames});
+        .then(events => {
+          res.render('index', { events, locationNames });
         })
     })
 

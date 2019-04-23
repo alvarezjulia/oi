@@ -4,10 +4,9 @@
 
   <label for="location">Location: </label>
   <select name="location">
-    <option value="Berghain">Berghain</option>
-    <option value="Watergate">Watergate</option>
-    <option value="Sisyphos">Sisyphos</option>
-    <option value="Wilde Renate">Wilde Renate</option>
+    {{#each locationNames}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
   </select>
 
   <label for="event">Event name: </label>
