@@ -23,8 +23,8 @@ router.get('/yourevents/add', (req, res) => {
 
 router.post('/yourevents/add', (req, res) => {
     const { _id } = req.user
-    const { location, event, door, begin, end, entry } = req.body
-    Event.create({ location, event, door, begin, end, entry })
+    const { location, date, event, door, begin, end, price } = req.body
+    Event.create({ location, date, event, door, begin, end, price })
         .then(event => {
             let eventArr = req.user.addedEvents
             eventArr.push(event._id)
@@ -62,8 +62,8 @@ router.get('/yourevents/edit/:id', (req, res) => {
 
 router.post('/yourevents/edit/:id', (req, res) => {
     const _id = req.params.id
-    const { location, event, door, begin, end, entry } = req.body
-    Event.findByIdAndUpdate({ _id }, { location, event, door, begin, end, entry })
+    const { location, event, door, begin, end, price } = req.body
+    Event.findByIdAndUpdate({ _id }, { location, event, door, begin, end, price })
         .then(() => {
             res.redirect('/yourevents')
         })

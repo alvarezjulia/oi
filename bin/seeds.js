@@ -30,29 +30,51 @@ mongoose
 //   }
 let events = [
   {
-    location: "ClubX",
+    date: "2019-04-23",
+    location: "Wilde Renate",
     event: "Awesome Techno Party",
     door: "20:00",
     begin: "21:30",
     end: "08:00",
-    entry: "3.50"
+    price: "3.50"
   },
   {
+    date: "2019-04-23",
     location: "Berghain",
-    event: "Fake Party",
-    door: "23:00",
-    begin: "23:00",
+    event: "Testparty 1232341",
+    door: "18:00",
+    begin: "21:00",
     end: "08:00",
-    entry: "10"
+    price: "3.50"
   },
   {
-    location: "Gaterwate",
-    event: "Oi release party",
-    door: "18:00",
-    begin: "20:00",
-    end: "21:00",
-    entry: "1000"
-  }
+    date: "2019-04-23",
+    location: "Tresor",
+    event: "Tresorparty",
+    door: "20:00",
+    begin: "21:30",
+    end: "08:00",
+    price: "3.50"
+  },
+  {
+    date: "2019-04-23",
+    location: "Sisyphos",
+    event: "Sisyphos Party",
+    door: "20:00",
+    begin: "21:30",
+    end: "08:00",
+    price: "13.50"
+  },
+  {
+    date: "2019-04-24",
+    location: "Berghain",
+    event: "Berhain Party day2",
+    door: "20:00",
+    begin: "21:30",
+    end: "08:00",
+    price: "15.50"
+  },
+
 ]
 
 

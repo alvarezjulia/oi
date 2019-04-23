@@ -15,4 +15,15 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  const filteredEvents = Object.values(req.body)
+  Event.find({location: {$in: filteredEvents}})
+  .then (events => {
+    res.render('index', {events});
+  })
+  .catch(err => {
+    console.error("Error while finding events", err)
+  });
+})
+
 module.exports = router;

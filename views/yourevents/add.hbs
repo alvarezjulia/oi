@@ -3,10 +3,18 @@
 <form action="/yourevents/add" method="post">
 
   <label for="location">Location: </label>
-  <input type="text" name="location">
+  <select name="location">
+    <option value="Berghain">Berghain</option>
+    <option value="Watergate">Watergate</option>
+    <option value="Sisyphos">Sisyphos</option>
+    <option value="Wilde Renate">Wilde Renate</option>
+  </select>
 
   <label for="event">Event name: </label>
   <input type="text" name="event">
+
+  <label for="date">Date: </label>
+  <input type="date" name="date">
 
   <label for="door">Door: </label>
   <input type="time" name="door">
@@ -17,8 +25,8 @@
   <label for="end">End: </label>
   <input type="time" name="end">
 
-  <label for="entry">Entry: </label>
-  <input type="number" name="entry">
+  <label for="price">Price: </label>
+  <input type="number" name="price">
 
   <button type="submit">Add event</button>
 </form>
