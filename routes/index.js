@@ -10,6 +10,7 @@ router.get('/', (req, res, next) => {
   Location.find({})
     .then(locationNames => {
       Event.find({})
+        .populate("location")
         .then(events => {
           res.render('index', { events, locationNames });
         })
@@ -22,9 +23,15 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   const filteredEvents = Object.values(req.body)
-  Event.find({ location: { $in: filteredEvents } })
-    .then(events => {
-      res.render('index', { events });
+  console.log("test")
+  console.log(Object.values(req.body))
+  Location.find({})
+    .then(locationNames => {
+      Event.find({ location: { $in: filteredEvents } })
+        .populate("location")
+        .then(events => {
+          res.render('index', { events, locationNames });
+        })
     })
     .catch(err => {
       console.error("Error while finding events", err)
