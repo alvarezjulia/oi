@@ -5,7 +5,7 @@ const User = require('../models/User')
 
 router.get('/yourevents', (req, res) => {
     const { _id } = req.user
-
+    console.log(Event)
     User.findById({ _id })
         .populate('addedEvents')
         .then(user => {
@@ -23,8 +23,9 @@ router.get('/yourevents/add', (req, res) => {
 
 router.post('/yourevents/add', (req, res) => {
     const { _id } = req.user
-    const { location, date, event, door, begin, end, price } = req.body
-    Event.create({ location, date, event, door, begin, end, price })
+    const { date, event, door, begin, end, price } = req.body
+    const { location } = req.body
+    Event.create({ date, event, door, begin, end, price })
         .then(event => {
             let eventArr = req.user.addedEvents
             eventArr.push(event._id)

@@ -9,47 +9,21 @@
 <div class="collapse" id="collapseExample">
   <div class="filter-locations-wrapper">
     <form action="/" method="post">
+      {{#each locationNames}}
       <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_1" type="checkbox" class="custom-control-input" id="customCheck1" value="Berghain">
-        <label class="custom-control-label" for="customCheck1">Berghain</label>
+        <input name ="filter-check{{this._id}}" type="checkbox" class="custom-control-input" id="customCheck{{this._id}}" value="{{this.name}}">
+        <label class="custom-control-label" for="customCheck{{this._id}}">{{this.name}}</label>
       </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_2" type="checkbox" class="custom-control-input" id="customCheck2" value="Watergate">
-        <label class="custom-control-label" for="customCheck2">Watergate</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_3" type="checkbox" class="custom-control-input" id="customCheck3" value="Wilde Renate">
-        <label class="custom-control-label" for="customCheck3">Wilde Renate</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_4" type="checkbox" class="custom-control-input" id="customCheck4" value="Sisyphos">
-        <label class="custom-control-label" for="customCheck4">Sisyphos</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_5" type="checkbox" class="custom-control-input" id="customCheck5" value="Tresor">
-        <label class="custom-control-label" for="customCheck5">Tresor</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_6" type="checkbox" class="custom-control-input" id="customCheck6" value="Ritter Butzke">
-        <label class="custom-control-label" for="customCheck6">Ritter Butzke</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_7" type="checkbox" class="custom-control-input" id="customCheck7" value="About Blank">
-        <label class="custom-control-label" for="customCheck7">About Blank</label>
-      </div>
-      <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check_8" type="checkbox" class="custom-control-input" id="customCheck8" value="Golden Gate">
-        <label class="custom-control-label" for="customCheck8">Golden Gate</label>
-      </div>
+      {{/each}}
       <button type="submit">Filter!</button>
     </form>
   </div>
 </div>
 
 {{#each events}}
-<div class="event-container" id="{{this._id}}">
-  <div class="location">{{location}}</div>
-  <div class="event">{{event}}</div>
+<div class="event-container" id="{{_id}}">
+  <div class="location">{{this.location}}</div>
+  <div class="event">{{this.event}}</div>
   <div class="info-wrapper">
     <div class="door">door: {{door}}</div>
     <div class="begin">begin: {{begin}}</div>

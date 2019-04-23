@@ -5,10 +5,15 @@ const eventSchema = new Schema({
     date: {
         type: Date
     },
-    location: {
-        type: String,
-        enum: ["Berghain", "Watergate", "Wilde Renate", "Sisyphos", "Tresor", "Ritter Butzke", "About Blank", "Golden Gate", "Club der Visionäre"]
-    },
+    // location: {
+    //     type: String
+    // },
+    location: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Location'
+        }
+    ],
     event: {
         type: String
     },
