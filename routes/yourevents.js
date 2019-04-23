@@ -51,10 +51,21 @@ router.post('/yourevents/delete/:id', (req, res) => {
 
 router.get('/yourevents/edit/:id', (req, res) => {
     const _id = req.params.id
-    console.log(_id)
     Event.findById({ _id })
         .then(event => {
             res.render('yourevents/edit', event)
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
+router.post('/yourevents/edit/:id', (req, res) => {
+    const _id = req.params.id
+    const { location, event, door, begin, end, entry } = req.body
+    Event.findByIdAndUpdate({ _id }, { location, event, door, begin, end, entry })
+        .then(() => {
+            res.redirect('/yourevents')
         })
         .catch(err => {
             console.error(err)

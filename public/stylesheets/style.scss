@@ -15,6 +15,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
 }
 
 h3 {
@@ -256,8 +257,10 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .col-3 {
+    width: 30vw;
     text-align: center;
 }
