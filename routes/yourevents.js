@@ -7,8 +7,16 @@ const Location = require('../models/Location')
 router.get('/yourevents', (req, res) => {
     const { _id } = req.user
     User.findById({ _id })
-        .populate('addedEvents')
+        .populate({
+            path: "addedEvents",
+            model: "Event",
+            populate: {
+                path: "location",
+                model: "Location"
+            }
+        })
         .then(user => {
+            console.log(user)
             const yourEvents = user.addedEvents
             res.render('yourevents/yourevents', { yourEvents })
         })
@@ -26,17 +34,13 @@ router.get('/yourevents/add', (req, res) => {
 
 router.post('/yourevents/add', (req, res) => {
     const { _id } = req.user
-    const { date, event, door, begin, end, price } = req.body
-    const locationID = req.body.location
-    Event.create({ date, event, door, begin, end, price })
+    const { date, event, door, begin, end, price,location} = req.body
+    
+    
+    Event.create({ date, event, door, begin, end, price, location })
         .then(event => {
             let eventArr = req.user.addedEvents
             eventArr.push(event._id)
-
-            console.log("location ID")
-            console.log(locationID)
-            console.log("event ID")
-            console.log(event._id)
 
             // const eventID = event._id
             // Event.findById({ eventID })

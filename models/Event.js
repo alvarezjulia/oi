@@ -8,12 +8,12 @@ const eventSchema = new Schema({
     // location: {
     //     type: String
     // },
-    location: [
+    location: 
         {
             type: Schema.Types.ObjectId,
             ref: 'Location'
         }
-    ],
+    ,
     event: {
         type: String
     },
