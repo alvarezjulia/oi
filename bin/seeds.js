@@ -12,8 +12,8 @@ const Location = require("../models/Location")
 const bcryptSalt = 10;
 
 mongoose
-  .connect('mongodb://localhost/oi', { useNewUrlParser: true })
-  .then(x => {
+.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+.then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
