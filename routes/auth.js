@@ -2,6 +2,7 @@ const express = require('express')
 const passport = require('passport')
 const router = express.Router()
 const User = require('../models/User')
+const Event = require('../models/Event')
 
 // Bcrypt to encrypt passwords
 const bcrypt = require('bcrypt')
@@ -108,6 +109,20 @@ router.post('/delete', (req, res) => {
     User.findByIdAndRemove({ _id })
         .then(() => {
             res.redirect('/auth/delete')
+        })
+        .catch(err => {
+            console.error(err)
+        })
+})
+
+router.post('/going/:id', (req, res, next) => {
+    const { _id } = req.user
+    const eventId = req.params.id
+    let goingEventsArr = req.user.goingEvents
+    goingEventsArr.push(eventId)
+    User.findByIdAndUpdate({ _id }, { goingEvents: goingEventsArr })
+        .then(() => {
+            res.redirect('/')
         })
         .catch(err => {
             console.error(err)

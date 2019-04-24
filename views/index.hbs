@@ -2,14 +2,27 @@
 <p>Welcome to {{title}}</p> --}}
 
 {{#each events}}
-<div class="event-container" id="{{this._id}}">
-  <div class="location">{{location}}</div>
-  <div class="event">{{event}}</div>
-  <div class="info-wrapper">
-    <div class="door">door: {{door}}</div>
-    <div class="begin">begin: {{begin}}</div>
-    <div class="end">end: {{end}}</div>
-    <div class="entry">entry: {{entry}}</div>
+<div class="col-3-wrapper event-container" id="{{this._id}}">
+  <div class="col-3">
+    <form action="/auth/going/{{this._id}}" method="post">
+      {{!-- {{#if goingToEvent}}
+      <button>tick going</button>
+      {{/if}} --}}
+      {{!-- {{#else}} --}}
+      <button>+ Going</button>
+      {{!-- {{/else}} --}}
+    </form>
   </div>
+  <div class="col-3">
+    <div class="location">{{location}}</div>
+    <div class="event">{{event}}</div>
+    <div class="info-wrapper">
+      <div class="door">door: {{door}}</div>
+      <div class="begin">begin: {{begin}}</div>
+      <div class="end">end: {{end}}</div>
+      <div class="entry">entry: {{entry}}</div>
+    </div>
+  </div>
+  <div class="col-3"></div>
 </div>
 {{/each}}
