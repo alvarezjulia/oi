@@ -44,7 +44,11 @@ button:hover {
   display: flex;
   justify-content: center; }
 
+<<<<<<< HEAD
 .nav a {
+=======
+.nav p {
+>>>>>>> ee1043a9ff5a14f1bdffef377909e9b5ca3810fd
   margin: 0;
   text-decoration: none; }
 
@@ -91,6 +95,7 @@ ion-icon {
   margin: 0px 10px;
   text-decoration: none; }
 
+<<<<<<< HEAD
 .filter-locations-wrapper {
   color: #ffffff;
   font-family: Lato;
@@ -104,6 +109,10 @@ ion-icon {
 
 #filter-location-box {
   margin: 20px; }
+=======
+.filter-locations {
+  display: flex; }
+>>>>>>> ee1043a9ff5a14f1bdffef377909e9b5ca3810fd
 
 .main-container {
   display: flex; }
