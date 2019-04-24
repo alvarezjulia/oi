@@ -28,6 +28,9 @@ button:hover {
   border-color: #000000;
   transition: all 0.3s ease 0s; }
 
+.attending-event-button {
+  background: #42cd36; }
+
 .nav-bar {
   color: white;
   font-family: Lato;

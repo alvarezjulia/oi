@@ -117,11 +117,24 @@ router.post('/delete', (req, res) => {
 
 router.post('/going/:id', (req, res, next) => {
     const { _id } = req.user
-    const eventId = req.params.id
-    let goingEventsArr = req.user.goingEvents
-    goingEventsArr.push(eventId)
-    User.findByIdAndUpdate({ _id }, { goingEvents: goingEventsArr })
-        .then(() => {
+    let eventId = req.params.id
+
+    User.findById({ _id })
+        .populate('goingEvents')
+        .then(user => {
+            let goingEventsArr = user.goingEvents.map(el => {
+                return el._id + ''
+            })
+            if (!goingEventsArr.includes(eventId)) {
+                goingEventsArr.push(eventId)
+                User.findByIdAndUpdate({ _id }, { goingEvents: goingEventsArr })
+                    .then(() => {
+                        res.redirect('/')
+                    })
+                    .catch(err => {
+                        console.error(err)
+                    })
+            }
             res.redirect('/')
         })
         .catch(err => {

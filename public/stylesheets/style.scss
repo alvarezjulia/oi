@@ -22,7 +22,7 @@ h3 {
 }
 
 button {
-    color: #03396c ;
+    color: #03396c;
     text-transform: uppercase;
     background: #ffffff;
     padding: 15px;
@@ -37,6 +37,10 @@ button:hover {
     border-radius: 40px;
     border-color: #000000;
     transition: all 0.3s ease 0s;
+}
+
+.attending-event-button {
+    background: #42cd36;
 }
 
 //////////////////////////////////// Nav bar

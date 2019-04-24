@@ -21,17 +21,16 @@
   </div>
 </div>
 
-{{#each events}}
+{{#each eventsObj}}
 
 <div class="col-3-wrapper event-container" id="{{this._id}}">
   <div class="col-3">
     <form action="/auth/going/{{this._id}}" method="post">
-      {{!-- {{#if goingToEvent}}
-      <button>tick going</button>
-      {{/if}} --}}
-      {{!-- {{#else}} --}}
-      <button>+ Going</button>
-      {{!-- {{/else}} --}}
+      {{#if going}}
+      <button class="attending-event-button">Attending event</button>
+      {{else}}
+      <button type="submit">+ Going</button>
+      {{/if}}
     </form>
   </div>
   <div class="col-3">

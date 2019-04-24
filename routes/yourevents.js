@@ -8,15 +8,14 @@ router.get('/yourevents', (req, res) => {
     const { _id } = req.user
     User.findById({ _id })
         .populate({
-            path: "addedEvents",
-            model: "Event",
+            path: 'addedEvents',
+            model: 'Event',
             populate: {
-                path: "location",
-                model: "Location"
+                path: 'location',
+                model: 'Location'
             }
         })
         .then(user => {
-            console.log(user)
             const yourEvents = user.addedEvents
             res.render('yourevents/yourevents', { yourEvents })
         })
@@ -26,17 +25,15 @@ router.get('/yourevents', (req, res) => {
 })
 
 router.get('/yourevents/add', (req, res) => {
-    Location.find({})
-        .then(locationNames => {
-            res.render('yourevents/add', { locationNames })
-        })
+    Location.find({}).then(locationNames => {
+        res.render('yourevents/add', { locationNames })
+    })
 })
 
 router.post('/yourevents/add', (req, res) => {
     const { _id } = req.user
-    const { date, event, door, begin, end, price,location} = req.body
-    
-    
+    const { date, event, door, begin, end, price, location } = req.body
+
     Event.create({ date, event, door, begin, end, price, location })
         .then(event => {
             let eventArr = req.user.addedEvents
@@ -70,10 +67,9 @@ router.get('/yourevents/edit/:id', (req, res) => {
     const _id = req.params.id
     Location.find({})
         .then(locationNames => {
-            Event.findById({ _id })
-                .then(event => {
-                    res.render('yourevents/edit', { event, locationNames })
-                })
+            Event.findById({ _id }).then(event => {
+                res.render('yourevents/edit', { event, locationNames })
+            })
         })
         .catch(err => {
             console.error(err)
