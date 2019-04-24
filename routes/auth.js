@@ -134,6 +134,16 @@ router.post('/going/:id', (req, res, next) => {
                     .catch(err => {
                         console.error(err)
                     })
+            } else if (goingEventsArr.includes(eventId)) {
+                const eventIndex = goingEventsArr.indexOf(eventId)
+                goingEventsArr.splice(eventIndex, 1)
+                User.findByIdAndUpdate({ _id }, { goingEvents: goingEventsArr })
+                    .then(user => {
+                        res.redirect('/')
+                    })
+                    .catch(err => {
+                        console.error(err)
+                    })
             }
             res.redirect('/')
         })
