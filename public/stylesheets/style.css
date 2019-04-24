@@ -134,6 +134,7 @@ ion-icon {
   flex-direction: row;
   justify-content: center; }
 
+.date,
 .door,
 .begin,
 .end,

@@ -16,7 +16,6 @@ router.get('/yourevents', (req, res) => {
             }
         })
         .then(user => {
-            console.log(user)
             const yourEvents = user.addedEvents
             res.render('yourevents/yourevents', { yourEvents })
         })

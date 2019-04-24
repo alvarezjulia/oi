@@ -8,13 +8,14 @@ const hbs = require('hbs')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const path = require('path')
+const request = require("request")
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const flash = require('connect-flash')
 
 mongoose
-    .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+    .connect("mongodb://localhost/oi", { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })
