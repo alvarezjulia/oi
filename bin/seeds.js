@@ -7,11 +7,12 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const Event = require("../models/Event")
+const Location = require("../models/Location")
 
 const bcryptSalt = 10;
 
 mongoose
-  .connect('mongodb://localhost/oi', {useNewUrlParser: true})
+  .connect('mongodb://localhost/oi', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -28,47 +29,132 @@ mongoose
 //     username: "bob",
 //     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
 //   }
-let events = [
+
+// let events = [
+//   {
+//     date: "2019-04-23",
+//     location: "Wilde Renate",
+//     event: "Awesome Techno Party",
+//     door: "20:00",
+//     begin: "21:30",
+//     end: "08:00",
+//     price: "3.50"
+//   },
+//   {
+//     date: "2019-04-23",
+//     location: "Berghain",
+//     event: "Testparty 1232341",
+//     door: "18:00",
+//     begin: "21:00",
+//     end: "08:00",
+//     price: "3.50"
+//   },
+//   {
+//     date: "2019-04-23",
+//     location: "Tresor",
+//     event: "Tresorparty",
+//     door: "20:00",
+//     begin: "21:30",
+//     end: "08:00",
+//     price: "3.50"
+//   },
+//   {
+//     date: "2019-04-23",
+//     location: "Sisyphos",
+//     event: "Sisyphos Party",
+//     door: "20:00",
+//     begin: "21:30",
+//     end: "08:00",
+//     price: "13.50"
+//   },
+//   {
+//     date: "2019-04-24",
+//     location: "Berghain",
+//     event: "Berhain Party day2",
+//     door: "20:00",
+//     begin: "21:30",
+//     end: "08:00",
+//     price: "15.50"
+//   }
+// ]
+
+let locations = [
   {
-    location: "ClubX",
-    event: "Awesome Techno Party",
-    door: "20:00",
-    begin: "21:30",
-    end: "08:00",
-    entry: "3.50"
+    city: "Berlin",
+    name: "Wilde Renate",
+    GPS: "129803120983",
+    address: "teststreet1234",
   },
   {
-    location: "Berghain",
-    event: "Fake Party",
-    door: "23:00",
-    begin: "23:00",
-    end: "08:00",
-    entry: "10"
+    city: "Berlin",
+    name: "Tresor",
+    GPS: "129803120983",
+    address: "teststreet1234",
   },
   {
-    location: "Gaterwate",
-    event: "Oi release party",
-    door: "18:00",
-    begin: "20:00",
-    end: "21:00",
-    entry: "1000"
-  }
+    city: "Berlin",
+    name: "Berghain",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Sisyphos",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Watergate",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "About Blank",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Golden Gate",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Berlin",
+    name: "Gretchen",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
 ]
 
 
-Event.deleteMany()
+
+Location.deleteMany()
 .then(() => {
-  return Event.create(events)
+  return Location.create(locations)
 })
-.then(eventsCreated => {
-  console.log(`${eventsCreated.length} events created with the following id:`);
-  console.log(eventsCreated.map(u => u._id));
+.then(locationsCreated => {
+  console.log(`${locationsCreated.length} locations created with the following id:`);
+  console.log(locationsCreated.map(u => u._id));
 })
-.then(() => {
-  // Close properly the connection to Mongoose
-  mongoose.disconnect()
-})
-.catch(err => {
-  mongoose.disconnect()
-  throw err
-})
+
+// Event.deleteMany()
+  // .then(() => {
+  //   return Event.create(events)
+  // })
+  // .then(eventsCreated => {
+  //   console.log(`${eventsCreated.length} events created with the following id:`);
+  //   console.log(eventsCreated.map(u => u._id));
+  // })
+
+  .then(() => {
+    // Close properly the connection to Mongoose
+    mongoose.disconnect()
+  })
+
+  .catch(err => {
+    mongoose.disconnect()
+    throw err
+  })

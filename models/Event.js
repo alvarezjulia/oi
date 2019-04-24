@@ -2,9 +2,18 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const eventSchema = new Schema({
-    location: {
-        type: String
+    date: {
+        type: Date
     },
+    // location: {
+    //     type: String
+    // },
+    location: 
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Location'
+        }
+    ,
     event: {
         type: String
     },
@@ -17,7 +26,7 @@ const eventSchema = new Schema({
     end: {
         type: String
     },
-    entry: {
+    price: {
         type: Number
     }
 })

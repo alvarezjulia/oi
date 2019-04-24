@@ -1,25 +1,29 @@
 <div class="profile-container" id="edit-event">
   <h2>Edit your event</h2>
 
-  <form action="/yourevents/edit/{{_id}}" method="post" class="input-form" id="form-container">
+  <form action="/yourevents/edit/{{event._id}}" method="post" class="input-form" id="form-container">
 
     <label for="location">Location: </label>
-    <input type="text" name="location" value="{{location}}">
+    <select name="location" value="">
+      {{#each locationNames}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
 
     <label for="event">Event name: </label>
-    <input type="text" name="event" value="{{event}}">
+    <input type="text" name="event" value="{{event.event}}">
 
     <label for="door">Door: </label>
-    <input type="time" name="door" value="{{door}}">
+    <input type="time" name="door" value="{{event.door}}">
 
     <label for="begin">Begin: </label>
-    <input type="time" name="begin" value="{{begin}}">
+    <input type="time" name="begin" value="{{event.begin}}">
 
     <label for="end">End: </label>
-    <input type="time" name="end" value="{{end}}">
+    <input type="time" name="end" value="{{event.end}}">
 
-    <label for="entry">Entry: </label>
-    <input type="number" name="entry" value="{{entry}}">
+    <label for="price">Price: </label>
+    <input type="number" name="price" value="{{event.price}}">
 
     <button type="submit">Save changes</button>
   </form>

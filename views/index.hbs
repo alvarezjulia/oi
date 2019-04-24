@@ -1,7 +1,28 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
+<div class="filter-button-wrapper">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+    aria-expanded="false" aria-controls="collapseExample">
+    Filter locations
+  </button>
+</div>
+<div class="collapse" id="collapseExample">
+  <div class="filter-locations-wrapper">
+    <form action="/" method="post">
+      {{#each locationNames}}
+      <div class="custom-control custom-checkbox" id="filter-location-box">
+        <input name="filter-check{{this._id}}" type="checkbox" class="custom-control-input" id="customCheck{{this._id}}"
+          value="{{this._id}}">
+        <label class="custom-control-label" for="customCheck{{this._id}}">{{this.name}}</label>
+      </div>
+      {{/each}}
+      <button type="submit">Filter!</button>
+    </form>
+  </div>
+</div>
 
 {{#each events}}
+
 <div class="col-3-wrapper event-container" id="{{this._id}}">
   <div class="col-3">
     <form action="/auth/going/{{this._id}}" method="post">
@@ -12,17 +33,16 @@
       <button>+ Going</button>
       {{!-- {{/else}} --}}
     </form>
-  </div>
-  <div class="col-3">
-    <div class="location">{{location}}</div>
-    <div class="event">{{event}}</div>
-    <div class="info-wrapper">
-      <div class="door">door: {{door}}</div>
-      <div class="begin">begin: {{begin}}</div>
-      <div class="end">end: {{end}}</div>
-      <div class="entry">entry: {{entry}}</div>
+    <div class="col-3">
+      <div class="location">{{location}}</div>
+      <div class="event">{{event}}</div>
+      <div class="info-wrapper">
+        <div class="door">door: {{door}}</div>
+        <div class="begin">begin: {{begin}}</div>
+        <div class="end">end: {{end}}</div>
+        <div class="entry">entry: {{entry}}</div>
+      </div>
     </div>
+    <div class="col-3"></div>
   </div>
-  <div class="col-3"></div>
-</div>
-{{/each}}
+  {{/each}}

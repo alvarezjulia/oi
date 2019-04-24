@@ -12,6 +12,22 @@ a {
 h2 {
   text-align: center; }
 
+button {
+  color: #03396c;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 15px;
+  margin: 20px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  display: inline-block; }
+
+button:hover {
+  color: #000000;
+  border-radius: 40px;
+  border-color: #000000;
+  transition: all 0.3s ease 0s; }
+
 .nav-bar {
   color: white;
   font-family: Lato;
@@ -28,7 +44,11 @@ h2 {
   display: flex;
   justify-content: center; }
 
+<<<<<<< HEAD
+.nav a {
+=======
 .nav p {
+>>>>>>> ee1043a9ff5a14f1bdffef377909e9b5ca3810fd
   margin: 0;
   text-decoration: none; }
 
@@ -44,16 +64,55 @@ ion-icon {
   font-size: 1.8rem;
   background-color: #2f5858;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px 50px 20px 0px;
+  padding: 20px 50px 20px 50px;
   margin-bottom: 3px; }
+
+.filter-button-wrapper .btn {
+  margin: 20px 50px; }
+
+.filter-button-wrapper {
+  position: absolute;
+  top: 112px; }
+
+.user-filter-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.filter-wrapper {
+  margin: 0;
+  height: 50px;
+  width: 220px; }
+
+.user-menu-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
 
 .user-bar a {
   color: #ffffff;
   margin: 0px 10px;
   text-decoration: none; }
+
+<<<<<<< HEAD
+.filter-locations-wrapper {
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 1rem;
+  background-color: #666370;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  margin-bottom: 3px; }
+
+#filter-location-box {
+  margin: 20px; }
+=======
+.filter-locations {
+  display: flex; }
+>>>>>>> ee1043a9ff5a14f1bdffef377909e9b5ca3810fd
 
 .main-container {
   display: flex; }
@@ -87,7 +146,7 @@ ion-icon {
 .door,
 .begin,
 .end,
-.entry {
+.price {
   font-size: 1rem;
   font-weight: 300;
   margin: 0px 10px; }
