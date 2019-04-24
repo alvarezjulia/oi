@@ -8,6 +8,11 @@ const hbs = require('hbs')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const path = require('path')
+const CronJob = require('cron').CronJob
+const fs = require('fs')
+const Event = require('./models/Event')
+//GraphQL
+const { request } = require('graphql-request')
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
@@ -26,6 +31,68 @@ const app_name = require('./package.json').name
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`)
 
 const app = express()
+
+new CronJob(
+    //12 : '00 00 12 * * *'
+    // One minute: 0 */1 * * * *
+    '00 00 12 * * *',
+    function() {
+        // fs.open('/open/some/file.txt', 'r', (err, fd) => {
+        //     if (err) throw err;
+        //     fs.close(fd, (err) => {
+        //       if (err) throw err;
+        //     });
+        //   });
+
+        const query = `{
+            allFutureEvents(city: "Zürich") {
+              date
+              locationName
+              details {
+                title
+                description
+                url
+                }
+               }
+            }`
+
+        request('https://api.heute.sg/graphql', query)
+            .then(data => {
+                data.allFutureEvents.forEach(el => {
+                    const date = el.date
+                    const event = el.details.title
+                    // const location = el.locationName
+
+                    // console.log(date)
+                    // console.log(event)
+                    // console.log(location)
+
+                    //     Event.create({ date, event })
+                    //         .then(() => {
+                    //             console.log('Events sucessfully created in DB')
+                    //         })
+                    //         .catch(err => {
+                    //             console.error(err)
+                    //         })
+                    // })
+                })
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    },
+    null,
+    true,
+    'America/Los_Angeles'
+)
+
+// request('https://api.heute.sg/graphql', query)
+//     .then(data => {
+//         console.log(data.allFutureEvents)
+//     })
+//     .catch(err => {
+//         console.error(err)
+//     })
 
 // Middleware Setup
 app.use(logger('dev'))
@@ -79,6 +146,7 @@ const loginCheck = (req, res, next) => {
 
 app.use(loginCheck)
 
+//Routes
 const index = require('./routes/index')
 app.use('/', index)
 
