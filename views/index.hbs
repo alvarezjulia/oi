@@ -11,7 +11,8 @@
     <form action="/" method="post">
       {{#each locationNames}}
       <div class="custom-control custom-checkbox" id="filter-location-box">
-        <input name ="filter-check{{this._id}}" type="checkbox" class="custom-control-input" id="customCheck{{this._id}}" value="{{this._id}}">
+        <input name="filter-check{{this._id}}" type="checkbox" class="custom-control-input" id="customCheck{{this._id}}"
+          value="{{this._id}}">
         <label class="custom-control-label" for="customCheck{{this._id}}">{{this.name}}</label>
       </div>
       {{/each}}
@@ -21,14 +22,28 @@
 </div>
 
 {{#each events}}
-<div class="event-container" id="{{_id}}">
-  <div class="location">{{this.location.name}}</div>
-  <div class="event">{{this.event}}</div>
-  <div class="info-wrapper">
-    <div class="door">door: {{door}}</div>
-    <div class="begin">begin: {{begin}}</div>
-    <div class="end">end: {{end}}</div>
-    <div class="price">price: {{price}}</div>
+
+<div class="col-3-wrapper event-container" id="{{this._id}}">
+  <div class="col-3">
+    <form action="/auth/going/{{this._id}}" method="post">
+      {{!-- {{#if goingToEvent}}
+      <button>tick going</button>
+      {{/if}} --}}
+      {{!-- {{#else}} --}}
+      <button>+ Going</button>
+      {{!-- {{/else}} --}}
+    </form>
   </div>
+  <div class="col-3">
+    <div class="location">{{this.location.name}}</div>
+    <div class="event">{{event}}</div>
+    <div class="info-wrapper">
+      <div class="door">door: {{door}}</div>
+      <div class="begin">begin: {{begin}}</div>
+      <div class="end">end: {{end}}</div>
+      <div class="price">price: {{price}}</div>
+    </div>
+  </div>
+  <div class="col-3"></div>
 </div>
 {{/each}}
