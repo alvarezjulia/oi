@@ -35,7 +35,7 @@ const app = express()
 new CronJob(
     //12 : '00 00 12 * * *'
     // One minute: 0 */1 * * * *
-    '*/10 * * * * *',
+    '* * */18 * * *',
     function() {
         const dateOfYesterday = moment(new Date())
             .subtract(1, 'day')
@@ -62,7 +62,7 @@ new CronJob(
         request('https://api.heute.sg/graphql', query)
             .then(data => {
                 const dateAfterThreeDays = moment(new Date())
-                    .add(2, 'day')
+                    .add(1, 'day')
                     .format('DD.MM.YYYY')
 
                 const eventsAfterThreeDaysArr = data.allFutureEvents.filter(el => {
@@ -75,21 +75,18 @@ new CronJob(
                     const location = el.locationName
                     const description = el.details.description
 
-                    // console.log(description)
-
                     Location.find({ name: location })
                         .then(oneLocation => {
-                            // console.log(oneLocation)
                             if (oneLocation[0]) {
                                 let locationId = oneLocation[0]._id
 
-                                // Event.create({ date, event, description, location: locationId })
-                                //     .then(() => {
-                                //         console.log('Events created')
-                                //     })
-                                //     .catch(err => {
-                                //         console.error(err)
-                                //     })
+                                Event.create({ date, event, description, location: locationId })
+                                    .then(() => {
+                                        console.log('Events created')
+                                    })
+                                    .catch(err => {
+                                        console.error(err)
+                                    })
                             }
                         })
                         .catch(err => {
