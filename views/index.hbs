@@ -21,8 +21,54 @@
   </div>
 </div>
 
-{{#each eventsObj}}
+<h2>EVENTS TODAY</h2>
+{{#each eventsTodayArr}}
+<div class="col-3-wrapper event-container" id="{{this._id}}">
+  <div class="col-3">
+    <form action="/auth/going/{{this._id}}" method="post">
+      {{#if going}}
+      <button type="submit" class="attending-event-button">Attending event</button>
+      {{else}}
+      <button type="submit">+ Going</button>
+      {{/if}}
+    </form>
+  </div>
+  <div class="col-3">
+    <div class="location">{{this.location.name}}</div>
+    <div class="event">{{event}}</div>
+    <div class="info-wrapper">
+      <div class="description">description: {{description}}</div>
+    </div>
+  </div>
+  <div class="col-3"></div>
+</div>
+{{/each}}
 
+<h2>EVENTS TOMORROW</h2>
+{{#each eventsTomorrowArr}}
+<div class="col-3-wrapper event-container" id="{{this._id}}">
+  <div class="col-3">
+    <form action="/auth/going/{{this._id}}" method="post">
+      {{#if going}}
+      <button type="submit" class="attending-event-button">Attending event</button>
+      {{else}}
+      <button type="submit">+ Going</button>
+      {{/if}}
+    </form>
+  </div>
+  <div class="col-3">
+    <div class="location">{{this.location.name}}</div>
+    <div class="event">{{event}}</div>
+    <div class="info-wrapper">
+      <div class="description">description: {{description}}</div>
+    </div>
+  </div>
+  <div class="col-3"></div>
+</div>
+{{/each}}
+
+<h2>EVENTS AFTER TOMORROW</h2>
+{{#each eventsAfterTomorrowArr}}
 <div class="col-3-wrapper event-container" id="{{this._id}}">
   <div class="col-3">
     <form action="/auth/going/{{this._id}}" method="post">

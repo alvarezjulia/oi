@@ -10,20 +10,60 @@ router.get('/', (req, res, next) => {
     const dateOfTomorrow = moment(new Date())
         .add(1, 'day')
         .format('DD.MM.YYYY')
+    const dateOfAfterTomorrow = moment(new Date())
+        .add(2, 'day')
+        .format('DD.MM.YYYY')
     Location.find({})
         .then(locationNames => {
-            Event.find({ date: dateOfToday })
+            Event.find({})
                 .populate('location')
                 .then(events => {
-                    eventsObj = events.map(oneEvent => {
-                        let going = false
-                        if (req.user) {
-                            going = req.user.goingEvents.map(el => el + '').includes(oneEvent._id + '')
+                    eventsTodayArr = events.filter(el => {
+                        if (el.date === dateOfToday) {
+                            let going = false
+
+                            if (req.user) {
+                                going = req.user.goingEvents
+                                    .map(element => element + '')
+                                    .includes(el._id + '')
+                            }
+                            el.going = going
+                            return el
                         }
-                        const { _id, date, event, description, location } = oneEvent
-                        return { _id, date, event, description, location, going }
                     })
-                    res.render('index', { eventsObj, locationNames })
+                    eventsTomorrowArr = events.filter(el => {
+                        if (el.date === dateOfTomorrow) {
+                            let going = false
+
+                            if (req.user) {
+                                going = req.user.goingEvents
+                                    .map(element => element + '')
+                                    .includes(el._id + '')
+                            }
+                            el.going = going
+                            return el
+                        }
+                    })
+                    eventsAfterTomorrowArr = events.filter(el => {
+                        if (el.date === dateOfAfterTomorrow) {
+                            let going = false
+
+                            if (req.user) {
+                                going = req.user.goingEvents
+                                    .map(element => element + '')
+                                    .includes(el._id + '')
+                            }
+                            el.going = going
+                            return el
+                        }
+                    })
+
+                    res.render('index', {
+                        locationNames,
+                        eventsTodayArr,
+                        eventsTomorrowArr,
+                        eventsAfterTomorrowArr
+                    })
                 })
         })
         .catch(err => {
@@ -33,12 +73,28 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     const filteredEvents = Object.values(req.body)
+    const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
+    const dateOfTomorrow = moment(new Date())
+        .add(1, 'day')
+        .format('DD.MM.YYYY')
+    const dateOfAfterTomorrow = moment(new Date())
+        .add(2, 'day')
+        .format('DD.MM.YYYY')
     Location.find({})
         .then(locationNames => {
-            Event.find({ $and: [{ location: { $in: filteredEvents } }, { date: dateOfToday }] })
+            Event.find({ location: { $in: filteredEvents } })
                 .populate('location')
                 .then(events => {
-                    res.render('index', { events, locationNames })
+                    eventsTodayArr = events.filter(el => el.date === dateOfToday)
+                    eventsTomorrowArr = events.filter(el => el.date === dateOfTomorrow)
+                    eventsAfterTomorrowArr = events.filter(el => el.date === dateOfAfterTomorrow)
+
+                    res.render('index', {
+                        eventsTodayArr,
+                        eventsTomorrowArr,
+                        eventsAfterTomorrowArr,
+                        locationNames
+                    })
                 })
         })
         .catch(err => {
