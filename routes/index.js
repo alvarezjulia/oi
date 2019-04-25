@@ -20,8 +20,8 @@ router.get('/', (req, res, next) => {
                         if (req.user) {
                             going = req.user.goingEvents.map(el => el + '').includes(oneEvent._id + '')
                         }
-                        const { _id, date, event, door, begin, end, price, location } = oneEvent
-                        return { _id, date, event, door, begin, end, price, location, going }
+                        const { _id, date, event, description, location } = oneEvent
+                        return { _id, date, event, description, location, going }
                     })
                     res.render('index', { eventsObj, locationNames })
                 })
