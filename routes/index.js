@@ -57,12 +57,13 @@ router.get('/', (req, res, next) => {
                             return el
                         }
                     })
-
+                    let userLoggedIn = req.isAuthenticated()
                     res.render('index', {
                         locationNames,
                         eventsTodayArr,
                         eventsTomorrowArr,
-                        eventsAfterTomorrowArr
+                        eventsAfterTomorrowArr,
+                        userLoggedIn
                     })
                 })
         })

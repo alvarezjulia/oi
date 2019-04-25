@@ -28,7 +28,7 @@
     <form action="/auth/going/{{this._id}}" method="post">
       {{#if going}}
       <button type="submit" class="attending-event-button">Attending event</button>
-      {{else}}
+      {{else if ../userLoggedIn}}
       <button type="submit">+ Going</button>
       {{/if}}
     </form>
@@ -55,7 +55,7 @@
     <form action="/auth/going/{{this._id}}" method="post">
       {{#if going}}
       <button type="submit" class="attending-event-button">Attending event</button>
-      {{else}}
+      {{else if ../userLoggedIn}}
       <button type="submit">+ Going</button>
       {{/if}}
     </form>
@@ -82,7 +82,7 @@
     <form action="/auth/going/{{this._id}}" method="post">
       {{#if going}}
       <button type="submit" class="attending-event-button">Attending event</button>
-      {{else}}
+      {{else if ../userLoggedIn}}
       <button type="submit">+ Going</button>
       {{/if}}
     </form>
