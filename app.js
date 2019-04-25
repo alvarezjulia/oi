@@ -9,10 +9,10 @@ const mongoose = require('mongoose')
 const logger = require('morgan')
 const path = require('path')
 const CronJob = require('cron').CronJob
-const fs = require('fs')
 const Event = require('./models/Event')
-//GraphQL
+const Location = require('./models/Location')
 const { request } = require('graphql-request')
+const moment = require('moment')
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
@@ -35,14 +35,17 @@ const app = express()
 new CronJob(
     //12 : '00 00 12 * * *'
     // One minute: 0 */1 * * * *
-    '00 00 12 * * *',
+    '* * */18 * * *',
     function() {
-        // fs.open('/open/some/file.txt', 'r', (err, fd) => {
-        //     if (err) throw err;
-        //     fs.close(fd, (err) => {
-        //       if (err) throw err;
-        //     });
-        //   });
+        const dateOfYesterday = moment(new Date())
+            .subtract(1, 'day')
+            .format('DD.MM.YYYY')
+
+        Event.deleteMany({ date: dateOfYesterday })
+            .then()
+            .catch(err => {
+                console.error(err)
+            })
 
         const query = `{
             allFutureEvents(city: "Zürich") {
@@ -58,26 +61,40 @@ new CronJob(
 
         request('https://api.heute.sg/graphql', query)
             .then(data => {
-                data.allFutureEvents.forEach(el => {
+                const dateAfterThreeDays = moment(new Date())
+                    .add(1, 'day')
+                    .format('DD.MM.YYYY')
+
+                const eventsAfterThreeDaysArr = data.allFutureEvents.filter(el => {
+                    if (el.date === dateAfterThreeDays) return el
+                })
+
+                eventsAfterThreeDaysArr.forEach(el => {
                     const date = el.date
                     const event = el.details.title
-                    // const location = el.locationName
+                    const location = el.locationName
+                    const description = el.details.description
 
-                    console.log('date: ', date)
-                    console.log(typeof date)
-                    // console.log(event)
-                    // console.log(location)
+                    Location.find({ name: location })
+                        .then(oneLocation => {
+                            if (oneLocation[0]) {
+                                let locationId = oneLocation[0]._id
 
-                    //     Event.create({ date, event })
-                    //         .then(() => {
-                    //             console.log('Events sucessfully created in DB')
-                    //         })
-                    //         .catch(err => {
-                    //             console.error(err)
-                    //         })
-                    // })
+                                Event.create({ date, event, description, location: locationId })
+                                    .then(() => {
+                                        console.log('Events created')
+                                    })
+                                    .catch(err => {
+                                        console.error(err)
+                                    })
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err)
+                        })
                 })
             })
+
             .catch(err => {
                 console.error(err)
             })
