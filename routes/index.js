@@ -72,7 +72,6 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
     const filteredEvents = Object.values(req.body)
     const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
     const dateOfTomorrow = moment(new Date())

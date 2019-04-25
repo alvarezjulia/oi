@@ -78,8 +78,8 @@ router.get('/yourevents/edit/:id', (req, res) => {
 
 router.post('/yourevents/edit/:id', (req, res) => {
     const _id = req.params.id
-    const { location, event, description } = req.body
-    Event.findByIdAndUpdate({ _id }, { location, event, description })
+    const { location, date, event, description } = req.body
+    Event.findByIdAndUpdate({ _id }, { location, date, event, description })
         .then(() => {
             res.redirect('/yourevents')
         })
