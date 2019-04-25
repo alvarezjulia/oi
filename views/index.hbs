@@ -40,7 +40,11 @@
       <div class="description">description: {{description}}</div>
     </div>
   </div>
-  <div class="col-3"></div>
+  <div class="col-3">
+    <form action="/whoisgoing/{{this._id}}" method="post">
+      <button type="submit">Who is going?</button>
+    </form>
+  </div>
 </div>
 {{/each}}
 
@@ -63,7 +67,11 @@
       <div class="description">description: {{description}}</div>
     </div>
   </div>
-  <div class="col-3"></div>
+  <div class="col-3">
+    <form action="/whoisgoing/{{this._id}}" method="post">
+      <button type="submit">Who is going?</button>
+    </form>
+  </div>
 </div>
 {{/each}}
 
@@ -88,7 +96,11 @@
     </div>
   </div>
 
-  <div class="event-column-right"></div>
+  <div class="event-column-right">
+    <form action="/whoisgoing/{{this._id}}" method="post">
+      <button type="submit">Who is going?</button>
+    </form>
+  </div>
 
 </div>
 {{/each}}

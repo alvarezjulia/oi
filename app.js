@@ -174,4 +174,7 @@ app.use('/auth', authRoutes)
 const eventRoutes = require('./routes/yourevents')
 app.use('/', eventRoutes)
 
+const whoisgoingRoutes = require('./routes/whoisgoing')
+app.use('/', whoisgoingRoutes)
+
 module.exports = app

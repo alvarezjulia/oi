@@ -1,0 +1,29 @@
+<h1>Who is going?</h1>
+<br>
+<h2>Event</h2>
+<div class="info-event-wrapper">
+  <div class="event-whoisgoing">
+    <h4>{{event.event}}</h4>
+    <h4>{{event.date}}</h4>
+    <h4>{{event.description}}</h4>
+  </div>
+  <div class="location-whoisgoing">
+    <h4>Location: </h4>
+    <h4>{{event.location.name}}</h4>
+    <h4>{{event.location.address}}</h4>
+  </div>
+</div>
+<h2>Attendees</h2>
+<div class="attending-users">
+  {{#if usersWhoGo}}
+  {{#each usersWhoGo}}
+  <h4>{{this.username}}</h4>
+  {{/each}}
+  {{else}}
+  <h4>Be the first one to sign up!</h4>
+  {{/if}}
+</div>
+
+<form action="/" method="get">
+  <button>Back to the main page</button>
+</form>

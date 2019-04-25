@@ -12,6 +12,7 @@ a {
 }
 
 h1 {
+    text-align: center;
 }
 
 h2 {
@@ -267,7 +268,8 @@ button:hover {
 
 //////////////////////////////////// Your events page
 
-.event-column-left, .event-column-right {
+.event-column-left,
+.event-column-right {
     width: 20vw;
     height: 100px;
     display: flex;
@@ -282,4 +284,29 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+//////////////////////////////////// Who is going
+
+.info-event-wrapper {
+    display: flex;
+    background-color: #ffa600;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin: 30px 200px;
+}
+
+.event-whoisgoing {
+    padding: 25px;
+}
+.location-whoisgoing {
+    padding: 25px;
+}
+.attending-users {
+    margin: 30px 200px;
+    background-color: #ffa600;
+    padding: 25px;
+    text-align: center;
 }
