@@ -23,8 +23,10 @@
 
 {{#each eventsObj}}
 
-<div class="col-3-wrapper event-container" id="{{this._id}}">
-  <div class="col-3">
+<div class="event-container" id="{{this._id}}">
+
+
+  <div class="event-column-left">
     <form action="/auth/going/{{this._id}}" method="post">
       {{#if going}}
       <button type="submit" class="attending-event-button">Attending event</button>
@@ -33,13 +35,16 @@
       {{/if}}
     </form>
   </div>
-  <div class="col-3">
+
+  <div class="event-column-center">
     <div class="location">{{this.location.name}}</div>
     <div class="event">{{event}}</div>
     <div class="info-wrapper">
       <div class="description">description: {{description}}</div>
     </div>
   </div>
-  <div class="col-3"></div>
+
+  <div class="event-column-right"></div>
+
 </div>
 {{/each}}
