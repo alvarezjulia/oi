@@ -63,7 +63,8 @@ new CronJob(
                     const event = el.details.title
                     // const location = el.locationName
 
-                    // console.log(date)
+                    console.log('date: ', date)
+                    console.log(typeof date)
                     // console.log(event)
                     // console.log(location)
 

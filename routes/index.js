@@ -2,16 +2,24 @@ const express = require('express')
 const router = express.Router()
 const Event = require('../models/Event')
 const Location = require('../models/Location')
+const moment = require('moment')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+    const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
+    const dateOfTomorrow = moment(new Date())
+        .add(1, 'day')
+        .format('DD.MM.YYYY')
     Location.find({})
         .then(locationNames => {
-            Event.find({})
+            Event.find({ date: dateOfToday })
                 .populate('location')
                 .then(events => {
                     eventsObj = events.map(oneEvent => {
-                        let going = req.user.goingEvents.map(el => el + '').includes(oneEvent._id + '')
+                        let going = false
+                        if (req.user) {
+                            going = req.user.goingEvents.map(el => el + '').includes(oneEvent._id + '')
+                        }
                         const { _id, date, event, door, begin, end, price, location } = oneEvent
                         return { _id, date, event, door, begin, end, price, location, going }
                     })
@@ -27,7 +35,7 @@ router.post('/', (req, res, next) => {
     const filteredEvents = Object.values(req.body)
     Location.find({})
         .then(locationNames => {
-            Event.find({ location: { $in: filteredEvents } })
+            Event.find({ $and: [{ location: { $in: filteredEvents } }, { date: dateOfToday }] })
                 .populate('location')
                 .then(events => {
                     res.render('index', { events, locationNames })
