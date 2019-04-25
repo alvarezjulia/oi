@@ -37,7 +37,6 @@ button:hover {
 .nav-bar {
   color: white;
   font-family: Lato;
-  font-size: 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -45,14 +44,17 @@ button:hover {
   padding: 20px 0px; }
 
 .nav {
-  width: 15%;
+  width: 40vw;
   margin: 0px 20px;
   display: flex;
   justify-content: center; }
 
 .nav a {
+  font-size: 1rem;
+  font-size: calc(100% + 1vw);
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+  text-align: center; }
 
 ion-icon {
   font-size: 3rem;
@@ -77,16 +79,23 @@ ion-icon {
 
 .filter-button-wrapper {
   position: absolute;
-  top: 112px; }
-
-.user-filter-wrapper {
-  display: flex;
-  flex-wrap: wrap; }
+  top: 10px; }
 
 .filter-wrapper {
   margin: 0;
   height: 50px;
   width: 220px; }
+
+.filter-form-wrapper {
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+  margin: 20px; }
+
+#filter-location-box {
+  display: flex;
+  justify-content: center;
+  padding: 4vh 4vw; }
 
 .user-menu-wrapper {
   display: flex;
@@ -96,6 +105,14 @@ ion-icon {
   color: #ffffff;
   margin: 0px 10px;
   text-decoration: none; }
+
+.n-slider--nav {
+  display: none; }
+
+.n-slider--arrow {
+  position: absolute;
+  top: 45px !important;
+  margin: 0px 10vw !important; }
 
 .filter-locations-wrapper {
   color: #ffffff;
@@ -108,16 +125,11 @@ ion-icon {
   padding: 20px 30px;
   margin-bottom: 3px; }
 
-#filter-location-box {
-  margin: 20px; }
-
 .main-container {
   display: flex; }
 
 .event-container {
-  color: #ffffff;
   font-family: Lato;
-  background-color: #0e9aa7;
   width: 100%;
   min-height: 200px;
   padding: 0px 50px;
@@ -125,6 +137,18 @@ ion-icon {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3px; }
+
+.today {
+  color: #ffffff;
+  background-color: #588c7e; }
+
+.tomorrow {
+  color: #000000;
+  background-color: #f2e394; }
+
+.dayaftertomorrow {
+  color: #000000;
+  background-color: #f2ae72; }
 
 .location {
   font-size: 1.4rem;

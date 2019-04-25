@@ -10,7 +10,7 @@ router.post('/whoisgoing/:id', (req, res) => {
         .then(event => {
             User.find({ goingEvents: { $in: _id } })
                 .then(usersWhoGo => {
-                    console.log(event)
+                    //console.log(event)
                     res.render('whoisgoing/whoisgoing', { usersWhoGo, event })
                 })
                 .catch(err => {

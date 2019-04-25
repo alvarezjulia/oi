@@ -81,19 +81,7 @@ mongoose
 let locations = [
   {
     city: "Zürich",
-    name: "Moods",
-    GPS: "129803120983",
-    address: "teststreet1234",
-  },
-  {
-    city: "Zürich",
     name: "Bogen F",
-    GPS: "129803120983",
-    address: "teststreet1234",
-  },
-  {
-    city: "Zürich",
-    name: "Exil",
     GPS: "129803120983",
     address: "teststreet1234",
   },
@@ -105,7 +93,7 @@ let locations = [
   },
   {
     city: "Zürich",
-    name: "Stall 6",
+    name: "Exil",
     GPS: "129803120983",
     address: "teststreet1234",
   },
@@ -123,7 +111,7 @@ let locations = [
   },
   {
     city: "Zürich",
-    name: "Papiersaal",
+    name: "Kaufleuten",
     GPS: "129803120983",
     address: "teststreet1234",
   },
@@ -135,25 +123,37 @@ let locations = [
   },
   {
     city: "Zürich",
-    name: "Sender",
-    GPS: "129803120983",
-    address: "teststreet1234",
-  },
-  {
-    city: "Zürich",
-    name: "Kaufleuten",
-    GPS: "129803120983",
-    address: "teststreet1234",
-  },
-  {
-    city: "Zürich",
     name: "Mehrspur",
     GPS: "129803120983",
     address: "teststreet1234",
   },
   {
     city: "Zürich",
+    name: "Moods",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Zürich",
+    name: "Papiersaal",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Zürich",
     name: "Rote Fabrik",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Zürich",
+    name: "Sender",
+    GPS: "129803120983",
+    address: "teststreet1234",
+  },
+  {
+    city: "Zürich",
+    name: "Stall 6",
     GPS: "129803120983",
     address: "teststreet1234",
   },

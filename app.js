@@ -82,7 +82,7 @@ new CronJob(
 
                                 Event.create({ date, event, description, location: locationId })
                                     .then(() => {
-                                        console.log('Events created')
+                                        //console.log('Events created')
                                     })
                                     .catch(err => {
                                         console.error(err)
