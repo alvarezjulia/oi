@@ -32,13 +32,14 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
+    const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
     const filteredEvents = Object.values(req.body)
     Location.find({})
         .then(locationNames => {
-            Event.find({ $and: [{ location: { $in: filteredEvents } }, { date: dateOfToday }] })
+            Event.find({ $and: [{ location: {$in: filteredEvents } }, { date: dateOfToday }] })
                 .populate('location')
-                .then(events => {
-                    res.render('index', { events, locationNames })
+                .then(eventsObj => {
+                    res.render('index', { eventsObj, locationNames })
                 })
         })
         .catch(err => {
