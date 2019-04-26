@@ -15,9 +15,11 @@ router.get('/', (req, res, next) => {
         .format('DD.MM.YYYY')
     Location.find({})
         .then(locationNames => {
+            console.log(locationNames)
             Event.find({})
                 .populate('location')
                 .then(events => {
+                    console.log(events)
                     eventsTodayArr = events.filter(el => {
                         if (el.date === dateOfToday) {
                             let going = false

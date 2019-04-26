@@ -35,8 +35,9 @@ const app = express()
 new CronJob(
     //12 : '00 00 12 * * *'
     // One minute: 0 */1 * * * *
-    '* * */18 * * *',
+    '0 0 */18 * * *',
     function() {
+        console.log(`Hello`)
         const dateOfYesterday = moment(new Date())
             .subtract(1, 'day')
             .format('DD.MM.YYYY')
