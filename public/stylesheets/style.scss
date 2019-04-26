@@ -22,6 +22,17 @@ h2 {
 h3 {
 }
 
+///ion-icons general style
+
+ion-icon {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+}
+
+/// Button Style
+
 button {
     color: #03396c;
     text-transform: uppercase;
@@ -40,11 +51,27 @@ button:hover {
     transition: all 0.3s ease 0s;
 }
 
-.attending-event-button {
-    background: #42cd36;
+
+/// Event container
+.event-column-left,
+.event-column-right {
+    width: 20vw;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-//////////////////////////////////// Nav bar
+.event-column-center {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+//////////////////////////////////// Nav bar (today / tomorrow / ...)
 .nav-bar {
     color: white;
     font-family: Lato;
@@ -71,13 +98,6 @@ button:hover {
     text-align: center;
 }
 
-ion-icon {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-    align-self: center;
-}
-
 //////////////////////////////////// User bar
 
 .user-bar {
@@ -93,10 +113,8 @@ ion-icon {
     margin-bottom: 3px;
 }
 ///START: "Filter Locations"  button
-.filter-button-wrapper .btn {
+.btn {
     margin: 20px 50px;
-}
-.filter-button-wrapper {
     position: absolute;
     top: 10px;
 }
@@ -133,12 +151,13 @@ ion-icon {
     text-decoration: none;
 }
 
+
 //////////////////////////////////// Index.hbs
 
+// slider buttons
 .n-slider--nav {
     display: none;
 }
-
 
 .n-slider--arrow {
     position: absolute; 
@@ -159,10 +178,7 @@ ion-icon {
     margin-bottom: 3px;
 }
 
-.main-container {
-    display: flex;
-}
-
+// container for today / tomorrow / day after tomorrow
 .event-container {
     font-family: Lato;
     width: 100%;
@@ -172,6 +188,10 @@ ion-icon {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3px;
+}
+
+.attending-event-button {
+    background: #42cd36;
 }
 
 .today {
@@ -198,11 +218,6 @@ ion-icon {
     font-size: calc(100% + 1.5vw);
     font-weight: 600;
 }
-.info-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
 .description {
     font-size: 1rem;
@@ -210,11 +225,7 @@ ion-icon {
     margin: 0px 10px;
 }
 
-//////////////////////////////////// Signup.hbs / Login.hbs
-
-.button-wrapper {
-    display: flex;
-}
+//////////////////////////////////// HBS for signup / login / edit /  profile
 
 .profile-container {
     min-height: calc(100vh - 174px - 100px);
@@ -222,6 +233,10 @@ ion-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.button-wrapper {
+    display: flex;
 }
 
 #login {
@@ -269,24 +284,6 @@ textarea {
     padding: 10px;
 }
 
-button {
-    color: #03396c;
-    text-transform: uppercase;
-    background: #ffffff;
-    padding: 15px;
-    margin: 20px;
-    border: 2px solid #000000;
-    border-radius: 2px;
-    display: inline-block;
-}
-
-button:hover {
-    color: #000000;
-    border-radius: 40px;
-    border-color: #000000;
-    transition: all 0.3s ease 0s;
-}
-
 #form-container a {
     font-size: 1.8rem;
     text-decoration: underline;
@@ -297,25 +294,9 @@ button:hover {
     color: #000000;
 }
 
-//////////////////////////////////// Your events page
+//////////////////////////////////// yourevents.hbs
 
-.event-column-left,
-.event-column-right {
-    width: 20vw;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.event-column-center {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 //////////////////////////////////// Who is going
 

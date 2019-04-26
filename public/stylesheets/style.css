@@ -31,8 +31,21 @@ button:hover {
   border-color: #000000;
   transition: all 0.3s ease 0s; }
 
-.attending-event-button {
-  background: #42cd36; }
+.event-column-left,
+.event-column-right {
+  width: 20vw;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.event-column-center {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .nav-bar {
   color: white;
@@ -74,10 +87,8 @@ ion-icon {
   padding: 20px 50px 20px 50px;
   margin-bottom: 3px; }
 
-.filter-button-wrapper .btn {
-  margin: 20px 50px; }
-
-.filter-button-wrapper {
+.btn {
+  margin: 20px 50px;
   position: absolute;
   top: 10px; }
 
@@ -125,9 +136,6 @@ ion-icon {
   padding: 20px 30px;
   margin-bottom: 3px; }
 
-.main-container {
-  display: flex; }
-
 .event-container {
   font-family: Lato;
   width: 100%;
@@ -137,6 +145,9 @@ ion-icon {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3px; }
+
+.attending-event-button {
+  background: #42cd36; }
 
 .today {
   color: #ffffff;
@@ -159,18 +170,10 @@ ion-icon {
   font-size: calc(100% + 1.5vw);
   font-weight: 600; }
 
-.info-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-
 .description {
   font-size: 1rem;
   font-weight: 300;
   margin: 0px 10px; }
-
-.button-wrapper {
-  display: flex; }
 
 .profile-container {
   min-height: calc(100vh - 174px - 100px);
@@ -178,6 +181,9 @@ ion-icon {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+.button-wrapper {
+  display: flex; }
 
 #login {
   background-color: #3da4ab; }
@@ -215,22 +221,6 @@ textarea {
   margin-bottom: 30px;
   padding: 10px; }
 
-button {
-  color: #03396c;
-  text-transform: uppercase;
-  background: #ffffff;
-  padding: 15px;
-  margin: 20px;
-  border: 2px solid #000000;
-  border-radius: 2px;
-  display: inline-block; }
-
-button:hover {
-  color: #000000;
-  border-radius: 40px;
-  border-color: #000000;
-  transition: all 0.3s ease 0s; }
-
 #form-container a {
   font-size: 1.8rem;
   text-decoration: underline; }
@@ -238,22 +228,6 @@ button:hover {
 .error-message {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #000000; }
-
-.event-column-left,
-.event-column-right {
-  width: 20vw;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.event-column-center {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
 
 .info-event-wrapper {
   display: flex;

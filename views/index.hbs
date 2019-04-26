@@ -1,11 +1,9 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
-<div class="filter-button-wrapper">
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
     aria-expanded="false" aria-controls="collapseExample">
     Filter locations
   </button>
-</div>
 <div class="collapse" id="collapseExample">
   <div class="filter-locations-wrapper">
     <form action="/" method="post">
@@ -42,9 +40,7 @@
       <div class="event-column-center">
         <div class="location">{{this.location.name}}</div>
         <div class="event">{{event}}</div>
-        <div class="info-wrapper">
-          <div class="description">description: {{description}}</div>
-        </div>
+        <div class="description">description: {{description}}</div>
       </div>
       <div class="event-column-right">
         <form action="/whoisgoing/{{this._id}}" method="post">
