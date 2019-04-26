@@ -1,20 +1,29 @@
-<h1>Who is going?</h1>
-<br>
-<h2>Event</h2>
-<div class="info-event-wrapper">
-  <div class="event-whoisgoing">
-    <h4>{{event.event}}</h4>
-    <h4>{{event.date}}</h4>
-    <h4>{{event.description}}</h4>
+<div class="typewriter">
+  <h1>Who is going?</h1>
+</div>
+
+<div class="event-container event-whoisgoing">
+  <div class="event-column-left"></div>
+  <div class="event-column-center">
+    <div class="title-whoisgoing">
+      <h2>Event</h2>
+    </div>
+
+    <div class="event">{{event.event}}</div>
+    <div class="date">{{event.date}}</div>
+    <div class="description">description: {{event.description}}</div>
   </div>
-  <div class="location-whoisgoing">
+  <div class="event-column-right">
     <h4>Location: </h4>
-    <h4>{{event.location.name}}</h4>
-    <h4>{{event.location.address}}</h4>
+    <div class="location">{{event.location.name}}</div>
+    <div class="location">{{event.location.address}}</div>
   </div>
 </div>
-<h2>Attendees</h2>
+
 <div class="attending-users">
+  <div class="title-whoisgoing">
+    <h2>Attendees</h2>
+  </div>
   {{#if usersWhoGo}}
   {{#each usersWhoGo}}
   <h4>{{this.username}}</h4>
@@ -24,6 +33,8 @@
   {{/if}}
 </div>
 
-<form action="/" method="get">
-  <button>Back to the main page</button>
-</form>
+<div class="button-back">
+  <form action="/" method="get">
+    <button>Back to the main page</button>
+  </form>
+</div>
