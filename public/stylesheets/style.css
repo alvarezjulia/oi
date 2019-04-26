@@ -160,7 +160,8 @@ button:hover {
   align-items: center;
   margin-bottom: 3px; }
 
-.button-attending-event, .button-going {
+.button-attending-event,
+.button-going {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -173,7 +174,8 @@ button:hover {
   border: 0px solid #000000;
   border-radius: 2px; }
 
-.button-attending-event p, .button-going p {
+.button-attending-event p,
+.button-going p {
   margin-right: 10px; }
 
 .today {
@@ -262,6 +264,15 @@ textarea {
 
 .title-yourevents {
   margin: 40px 0; }
+
+.info-event-wrapper {
+  display: flex;
+  background-color: #ffa600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  margin: 30px 200px; }
 
 .event-whoisgoing {
   background-color: #bfa1d8;
