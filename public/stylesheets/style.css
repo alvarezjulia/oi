@@ -73,6 +73,9 @@ button:hover {
   text-decoration: none;
   text-align: center; }
 
+.swipe-titles {
+  font-size: 40px; }
+
 .user-bar {
   color: #ffffff;
   font-family: Lato;
@@ -229,6 +232,9 @@ button:hover {
 #edit-event {
   background-color: #ff5733; }
 
+#add-event {
+  background-color: #c7c625; }
+
 .profile-container .title {
   margin-bottom: 40px; }
 
@@ -313,6 +319,13 @@ textarea {
   display: flex;
   justify-content: center; }
 
+.event-column-right-location {
+  width: 20vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
 .myEvents,
 .profile,
 .logout,
@@ -321,6 +334,7 @@ textarea {
   border: solid #ffffff;
   border-radius: 5px;
   margin: 0 5px;
-  font-size: 20px; }
+  font-size: 20px;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */

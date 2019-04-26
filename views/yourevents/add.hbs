@@ -1,22 +1,25 @@
-<h2>Add a new event</h2>
+<div class="profile-container" id="add-event">
 
-<form action="/yourevents/add" method="post">
+  <h2>Add a new event</h2>
 
-  <label for="location">Location: </label>
-  <select name="location">
-    {{#each locationNames}}
-    <option value="{{this._id}}">{{this.name}}</option>
-    {{/each}}
-  </select>
+  <form action="/yourevents/add" method="post" class="input-form" id="form-container">
 
-  <label for="event">Event name: </label>
-  <input type="text" name="event">
+    <label for="location">Location: </label>
+    <select name="location">
+      {{#each locationNames}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
 
-  <label for="date">Date: </label>
-  <input type="text" name="date" placeholder="DD.MM.YYYY">
+    <label for="event">Event name: </label>
+    <input type="text" name="event">
 
-  <label for="description">Description: </label>
-  <input type="text" name="description" placeholder="e.g. begin, entry price, etc..">
+    <label for="date">Date: </label>
+    <input type="text" name="date" placeholder="DD.MM.YYYY">
 
-  <button type="submit">Add event</button>
-</form>
+    <label for="description">Description: </label>
+    <input type="text" name="description" placeholder="e.g. begin, entry price, etc..">
+
+    <button type="submit">Add event</button>
+  </form>
+</div>

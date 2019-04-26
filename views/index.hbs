@@ -24,7 +24,7 @@
 <div class='n-slider'>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">today</a></div>
+      <div class="nav"> <span class="swipe-titles"> Today</span></div>
     </div>
     {{#each eventsTodayArr}}
     <div class="event-container today" id="{{this._id}}">
@@ -32,17 +32,17 @@
         <form action="/auth/going/{{this._id}}" method="post">
           {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>
@@ -62,7 +62,7 @@
   </div>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">tomorrow</a></div>
+      <div class="nav"> <span class="swipe-titles"> Tomorrow</span></div>
     </div>
     {{#each eventsTomorrowArr}}
     <div class="event-container tomorrow" id="{{this._id}}">
@@ -70,17 +70,17 @@
         <form action="/auth/going/{{this._id}}" method="post">
           {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>
@@ -102,24 +102,24 @@
   </div>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">day after tomorrow</a></div>
+      <div class="nav"> <span class="swipe-titles">Day After Tomorrow</span> </div>
     </div>{{#each eventsAfterTomorrowArr}}
     <div class="event-container dayaftertomorrow" id="{{this._id}}">
       <div class="event-column-left">
         <form action="/auth/going/{{this._id}}" method="post">
-         {{#if going}}
+          {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>

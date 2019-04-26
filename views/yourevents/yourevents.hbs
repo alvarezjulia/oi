@@ -14,15 +14,17 @@
   </div>
   <div class="event-column-right">
     <form action="/yourevents/edit/{{_id}}" method="get">
-      <button>Edit event</button>
+      <button><i class="fas fa-edit"></i>Edit event</button>
     </form>
     <form action="/yourevents/delete/{{_id}}" method="post">
-      <button>Delete event</button>
+      <button><i class="far fa-trash-alt"></i> Delete event</button>
     </form>
   </div>
 </div>
 {{/each}}
 
-<form action="/yourevents/add" method="get">
-  <button>Add event</button>
-</form>
+<div class="button-back">
+  <form action="/yourevents/add" method="get">
+    <button>Add event</button>
+  </form>
+</div>
