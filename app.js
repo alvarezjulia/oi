@@ -82,7 +82,6 @@ new CronJob(
                     const event = el.details.title
                     const location = el.locationName
                     const description = el.details.description
-                    console.log(date)
                     Location.find({ name: location })
                         .then(oneLocation => {
                             if (oneLocation[0]) {
@@ -90,11 +89,9 @@ new CronJob(
 
                                 // Event.create({ date, event, description, location: locationId })
                                 //     .then(() => {
-                                //         console.log(date)
                                 //         console.log('Event created for today: ', event)
                                 //     })
                                 //     .catch(err => {
-                                //         console.log(date)
                                 //         console.error(err)
                                 //     })
                             }
@@ -113,7 +110,6 @@ new CronJob(
                     const event = el.details.title
                     const location = el.locationName
                     const description = el.details.description
-                    console.log(date)
                     Location.find({ name: location })
                         .then(oneLocation => {
                             if (oneLocation[0]) {
