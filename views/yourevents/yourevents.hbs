@@ -13,12 +13,27 @@
     </div>
   </div>
   <div class="event-column-right">
-    <form action="/yourevents/edit/{{_id}}" method="get">
+    {{!-- <form action="/yourevents/edit/{{_id}}" method="get">
       <button><i class="fas fa-edit"></i>Edit event</button>
-    </form>
-    <form action="/yourevents/delete/{{_id}}" method="post">
-      <button><i class="far fa-trash-alt"></i> Delete event</button>
-    </form>
+    </form> --}}
+    <div class="edit-event-wrapper">
+      <form action="/yourevents/edit/{{_id}}" method="get">
+        <button class="button-attending-event">
+          <p>edit event</p>
+          <div>
+            <ion-icon name="create"></ion-icon>
+          </div>
+        </button>
+      </form>
+      <form action="/yourevents/delete/{{_id}}" method="post">
+        <button class="button-attending-event">
+          <p>delete event</p>
+          <div>
+            <ion-icon name="trash"></ion-icon>
+          </div>
+        </button>
+      </form>
+    </div>
   </div>
 </div>
 {{/each}}

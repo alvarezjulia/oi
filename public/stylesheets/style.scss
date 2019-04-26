@@ -125,9 +125,18 @@ button:hover {
     display: flex;
 }
 
+.user-bar-wrapper-side {
+    display: flex;
+}
+
+.left {
+    justify-content: flex-end;
+    width: 40vw;
+}
+
 .right {
     justify-content: flex-end;
-    width: 30vw;
+    width: 40vw;
 }
 
 .center {
@@ -221,7 +230,6 @@ button:hover {
 .button-going {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     flex-wrap: wrap-reverse;
     color: #000000;
     text-transform: none;
@@ -309,6 +317,14 @@ button:hover {
 
 .profile-container .title {
     margin-bottom: 40px;
+}
+
+.edit-event-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    height: 180px;
 }
 
 #form-container,
@@ -422,9 +438,15 @@ textarea {
 .logout,
 .signup,
 .login {
-    border: solid #ffffff;
+    display: flex;
+    flex-wrap: reverse;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     margin: 0 5px;
     font-size: 20px;
     padding: 5px;
+}
+
+.fas {
+    margin-right: 0.7rem;
 }
