@@ -15,6 +15,12 @@ h1 {
 h2 {
   text-align: center; }
 
+ion-icon {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  align-self: center; }
+
 button {
   color: #03396c;
   text-transform: uppercase;
@@ -68,12 +74,6 @@ button:hover {
   margin: 0;
   text-decoration: none;
   text-align: center; }
-
-ion-icon {
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
-  align-self: center; }
 
 .user-bar {
   color: #ffffff;
