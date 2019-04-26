@@ -192,7 +192,7 @@ button:hover {
   background-color: #03396c; }
 
 #profile {
-  background-color: #6b5b95; }
+  background-color: #a52a2a; }
 
 #edit-profile {
   background-color: #3e4444; }
@@ -228,6 +228,13 @@ textarea {
 .error-message {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #000000; }
+
+.event-yourevents {
+  background-color: #f2ae72;
+  color: #000000; }
+
+.title-yourevents {
+  margin: 40px 0; }
 
 .event-whoisgoing {
   background-color: #bfa1d8;
@@ -267,5 +274,15 @@ textarea {
 .button-back {
   display: flex;
   justify-content: center; }
+
+.myEvents,
+.profile,
+.logout,
+.signup,
+.login {
+  border: solid #ffffff;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

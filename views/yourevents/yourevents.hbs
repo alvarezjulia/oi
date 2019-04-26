@@ -1,7 +1,9 @@
-<h2>Your events</h2>
+<div class="title-yourevents">
+  <h1>Your events</h1>
+</div>
 
 {{#each yourEvents}}
-<div class="event-container">
+<div class="event-container event-yourevents">
   <div class="event-column-left"></div>
   <div class="event-column-center" id="{{this._id}}">
     <div class="location">{{location.name}}</div>
@@ -20,7 +22,6 @@
   </div>
 </div>
 {{/each}}
-
 
 <form action="/yourevents/add" method="get">
   <button>Add event</button>

@@ -246,7 +246,7 @@ button:hover {
 }
 
 #profile {
-    background-color: #6b5b95;
+    background-color: #a52a2a;
 }
 
 #edit-profile {
@@ -294,6 +294,15 @@ textarea {
 
 //////////////////////////////////// yourevents.hbs
 
+.event-yourevents {
+    background-color: #f2ae72;
+    color: #000000;
+}
+
+.title-yourevents {
+    margin: 40px 0;
+}
+
 //////////////////////////////////// Who is going
 
 .event-whoisgoing {
@@ -338,4 +347,16 @@ textarea {
 .button-back {
     display: flex;
     justify-content: center;
+}
+
+//////////////////////////////////// Anchors in navbar
+.myEvents,
+.profile,
+.logout,
+.signup,
+.login {
+    border: solid #ffffff;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 20px;
 }
