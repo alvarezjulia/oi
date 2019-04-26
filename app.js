@@ -48,6 +48,12 @@ new CronJob(
                 console.error(err)
             })
 
+        // Event.deleteMany({})
+        //     .then(() => {
+        //         console.log('All events deleted')
+        //     })
+        //     .catch(err => console.error(err))
+
         const query = `{
             allFutureEvents(city: "Zürich") {
               date
@@ -62,8 +68,74 @@ new CronJob(
 
         request('https://api.heute.sg/graphql', query)
             .then(data => {
-                const dateAfterThreeDays = moment(new Date())
+                //If events for today and tomorrow want to be created
+                const dateOfToday = moment(new Date()).format('DD.MM.YYYY')
+                const dateOfTomorrow = moment(new Date())
                     .add(1, 'day')
+                    .format('DD.MM.YYYY')
+                const eventsOfTodayArr = data.allFutureEvents.filter(el => {
+                    if (el.date === dateOfToday) return el
+                })
+
+                eventsOfTodayArr.forEach(el => {
+                    const date = el.date
+                    const event = el.details.title
+                    const location = el.locationName
+                    const description = el.details.description
+                    console.log(date)
+                    Location.find({ name: location })
+                        .then(oneLocation => {
+                            if (oneLocation[0]) {
+                                let locationId = oneLocation[0]._id
+
+                                // Event.create({ date, event, description, location: locationId })
+                                //     .then(() => {
+                                //         console.log(date)
+                                //         console.log('Event created for today: ', event)
+                                //     })
+                                //     .catch(err => {
+                                //         console.log(date)
+                                //         console.error(err)
+                                //     })
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err)
+                        })
+                })
+
+                const eventsOfTomorrowArr = data.allFutureEvents.filter(el => {
+                    if (el.date === dateOfTomorrow) return el
+                })
+
+                eventsOfTomorrowArr.forEach(el => {
+                    const date = el.date
+                    const event = el.details.title
+                    const location = el.locationName
+                    const description = el.details.description
+                    console.log(date)
+                    Location.find({ name: location })
+                        .then(oneLocation => {
+                            if (oneLocation[0]) {
+                                let locationId = oneLocation[0]._id
+
+                                // Event.create({ date, event, description, location: locationId })
+                                //     .then(() => {
+                                //         console.log('Event created for tomorrow: ', event)
+                                //     })
+                                //     .catch(err => {
+                                //         console.error(err)
+                                //     })
+                            }
+                        })
+                        .catch(err => {
+                            console.error(err)
+                        })
+                })
+
+                //Creation of after tomorrow events
+                const dateAfterThreeDays = moment(new Date())
+                    .add(2, 'day')
                     .format('DD.MM.YYYY')
 
                 const eventsAfterThreeDaysArr = data.allFutureEvents.filter(el => {
@@ -75,7 +147,7 @@ new CronJob(
                     const event = el.details.title
                     const location = el.locationName
                     const description = el.details.description
-
+                    console.log(date)
                     Location.find({ name: location })
                         .then(oneLocation => {
                             if (oneLocation[0]) {
@@ -83,7 +155,7 @@ new CronJob(
 
                                 Event.create({ date, event, description, location: locationId })
                                     .then(() => {
-                                        //console.log('Events created')
+                                        console.log('Event created for after tomorrow: ', event)
                                     })
                                     .catch(err => {
                                         console.error(err)
