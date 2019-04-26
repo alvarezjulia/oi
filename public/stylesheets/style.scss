@@ -57,8 +57,6 @@ button:hover {
     width: 20vw;
     height: 100px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -108,8 +106,28 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 5vw;
     margin-bottom: 3px;
+}
+
+.user-bar-wrapper-side {
+    display: flex;
+}
+
+.right {
+    justify-content: flex-end;
+    width: 30vw;
+}
+
+.center {
+    width: 5vw;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 ///START: "Filter Locations"  button
 .btn {
@@ -181,30 +199,46 @@ button:hover {
     font-family: Lato;
     width: 100%;
     min-height: 200px;
-    padding: 0px 50px;
+    padding: 0px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3px;
 }
 
-.attending-event-button {
-    background: #42cd36;
+.button-attending-event,
+.button-going {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    color: #000000;
+    text-transform: none;
+    background: transparent;
+    padding: 0px;
+    margin: 00px;
+    border: 0px solid #000000;
+    border-radius: 2px;
+}
+
+.button-attending-event p,
+.button-going p {
+    margin-right: 10px;
 }
 
 .today {
-    color: #ffffff;
-    background-color: #588c7e;
-}
-
-.tomorrow {
     color: #000000;
     background-color: #f2e394;
 }
 
-.dayaftertomorrow {
+.tomorrow {
     color: #000000;
     background-color: #f2ae72;
+}
+
+.dayaftertomorrow {
+    color: #000000;
+    background-color: #d96459;
 }
 
 .location {
@@ -304,6 +338,16 @@ textarea {
 }
 
 //////////////////////////////////// Who is going
+
+.info-event-wrapper {
+    display: flex;
+    background-color: #ffa600;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin: 30px 200px;
+}
 
 .event-whoisgoing {
     background-color: #bfa1d8;
