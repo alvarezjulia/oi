@@ -37,11 +37,18 @@ button:hover {
   border-color: #000000;
   transition: all 0.3s ease 0s; }
 
-.event-column-left,
+.event-column-left {
+  width: 20vw;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
 .event-column-right {
   width: 20vw;
   height: 100px;
   display: flex;
+  justify-content: flex-end;
   align-items: center; }
 
 .event-column-center {
@@ -193,6 +200,7 @@ button:hover {
   font-weight: 600; }
 
 .event {
+  text-align: center;
   font-size: 1.5rem;
   font-size: calc(100% + 1.5vw);
   font-weight: 600; }
@@ -255,6 +263,15 @@ textarea {
 .error-message {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #000000; }
+
+.info-event-wrapper {
+  display: flex;
+  background-color: #ffa600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  margin: 30px 200px; }
 
 .event-whoisgoing {
   background-color: #bfa1d8;

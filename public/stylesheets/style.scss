@@ -52,11 +52,19 @@ button:hover {
 }
 
 /// Event container
-.event-column-left,
+.event-column-left {
+    width: 20vw;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .event-column-right {
     width: 20vw;
     height: 100px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -236,11 +244,7 @@ justify-content: center;
 
 .dayaftertomorrow {
     color: #000000;
-<<<<<<< HEAD
-    background-color: #d96459
-=======
-    background-color: #f2ae72;
->>>>>>> 4877b313d1d7effae85efa9743a983020540227d
+    background-color: #d96459;
 }
 
 .location {
@@ -248,6 +252,7 @@ justify-content: center;
     font-weight: 600;
 }
 .event {
+    text-align: center;
     font-size: 1.5rem;
     font-size: calc(100% + 1.5vw);
     font-weight: 600;

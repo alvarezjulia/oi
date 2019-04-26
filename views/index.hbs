@@ -32,17 +32,17 @@
         <form action="/auth/going/{{this._id}}" method="post">
           {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>
@@ -54,7 +54,12 @@
       </div>
       <div class="event-column-right">
         <form action="/whoisgoing/{{this._id}}" method="post">
-          <button type="submit">Who is going?</button>
+          <button type="submit" class="button-attending-event">
+            <p>who else goes?</p>
+            <div>
+              <ion-icon name="contacts"></ion-icon>
+            </div>
+          </button>
         </form>
       </div>
     </div>
@@ -70,17 +75,17 @@
         <form action="/auth/going/{{this._id}}" method="post">
           {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>
@@ -94,7 +99,12 @@
       </div>
       <div class="event-column-right">
         <form action="/whoisgoing/{{this._id}}" method="post">
-          <button type="submit">Who is going?</button>
+          <button type="submit" class="button-attending-event">
+            <p>who else goes?</p>
+            <div>
+              <ion-icon name="contacts"></ion-icon>
+            </div>
+          </button>
         </form>
       </div>
     </div>
@@ -107,19 +117,19 @@
     <div class="event-container dayaftertomorrow" id="{{this._id}}">
       <div class="event-column-left">
         <form action="/auth/going/{{this._id}}" method="post">
-         {{#if going}}
+          {{#if going}}
           <button type="submit" class="button-attending-event">
-          <p>have fun!</p>
-          <div>
-            <ion-icon name="close-circle"></ion-icon>
-          </div>
+            <p>have fun!</p>
+            <div>
+              <ion-icon name="close-circle"></ion-icon>
+            </div>
           </button>
           {{else if ../userLoggedIn}}
           <button type="submit" class="button-going">
-          <p>wanna go?</p>
-          <div>
-            <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
+            <p>wanna go?</p>
+            <div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
           </button>
           {{/if}}
         </form>
@@ -134,8 +144,13 @@
       </div>
 
       <div class="event-column-right">
-        <form action="/whoisgoing/{{this._id}}" method="post">
-          <button type="submit">Who is going?</button>
+       <form action="/whoisgoing/{{this._id}}" method="post">
+          <button type="submit" class="button-attending-event">
+            <p>who else goes?</p>
+            <div>
+              <ion-icon name="contacts"></ion-icon>
+            </div>
+          </button>
         </form>
       </div>
 
