@@ -1,7 +1,9 @@
-<h2>Your events</h2>
+<div class="title-yourevents">
+  <h1>Your events</h1>
+</div>
 
 {{#each yourEvents}}
-<div class="event-container today">
+<div class="event-container event-yourevents">
   <div class="event-column-left"></div>
   <div class="event-column-center" id="{{this._id}}">
     <div class="location">{{location.name}}</div>
@@ -12,16 +14,17 @@
   </div>
   <div class="event-column-right">
     <form action="/yourevents/edit/{{_id}}" method="get">
-      <button>Edit event</button>
+      <button><i class="fas fa-edit"></i>Edit event</button>
     </form>
     <form action="/yourevents/delete/{{_id}}" method="post">
-      <button>Delete event</button>
+      <button><i class="far fa-trash-alt"></i> Delete event</button>
     </form>
   </div>
 </div>
 {{/each}}
 
-
-<form action="/yourevents/add" method="get">
-  <button>Add event</button>
-</form>
+<div class="button-back">
+  <form action="/yourevents/add" method="get">
+    <button>Add event</button>
+  </form>
+</div>

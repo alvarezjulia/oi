@@ -24,7 +24,7 @@
 <div class='n-slider'>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">today</a></div>
+      <div class="nav"> <span class="swipe-titles"> Today</span></div>
     </div>
     {{#each eventsTodayArr}}
     <div class="event-container today" id="{{this._id}}">
@@ -67,7 +67,7 @@
   </div>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">tomorrow</a></div>
+      <div class="nav"> <span class="swipe-titles"> Tomorrow</span></div>
     </div>
     {{#each eventsTomorrowArr}}
     <div class="event-container tomorrow" id="{{this._id}}">
@@ -112,7 +112,7 @@
   </div>
   <div>
     <div class="nav-bar">
-      <div class="nav"><a href="/">day after tomorrow</a></div>
+      <div class="nav"> <span class="swipe-titles">Day After Tomorrow</span> </div>
     </div>{{#each eventsAfterTomorrowArr}}
     <div class="event-container dayaftertomorrow" id="{{this._id}}">
       <div class="event-column-left">

@@ -102,6 +102,9 @@ button:hover {
     text-decoration: none;
     text-align: center;
 }
+.swipe-titles {
+    font-size: 40px;
+}
 
 //////////////////////////////////// User bar
 
@@ -128,8 +131,8 @@ button:hover {
 }
 
 .center {
-width: 5vw;
-justify-content: center;
+    width: 5vw;
+    justify-content: center;
 }
 
 .home {
@@ -214,7 +217,8 @@ justify-content: center;
     margin-bottom: 3px;
 }
 
-.button-attending-event, .button-going {
+.button-attending-event,
+.button-going {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -228,7 +232,8 @@ justify-content: center;
     border-radius: 2px;
 }
 
-.button-attending-event p, .button-going p {
+.button-attending-event p,
+.button-going p {
     margin-right: 10px;
 }
 
@@ -287,7 +292,7 @@ justify-content: center;
 }
 
 #profile {
-    background-color: #6b5b95;
+    background-color: #a52a2a;
 }
 
 #edit-profile {
@@ -296,6 +301,10 @@ justify-content: center;
 
 #edit-event {
     background-color: #ff5733;
+}
+
+#add-event {
+    background-color: #c7c625;
 }
 
 .profile-container .title {
@@ -335,6 +344,15 @@ textarea {
 
 //////////////////////////////////// yourevents.hbs
 
+.event-yourevents {
+    background-color: #f2ae72;
+    color: #000000;
+}
+
+.title-yourevents {
+    margin: 40px 0;
+}
+
 //////////////////////////////////// Who is going
 
 .info-event-wrapper {
@@ -346,7 +364,6 @@ textarea {
     height: 250px;
     margin: 30px 200px;
 }
-
 
 .event-whoisgoing {
     background-color: #bfa1d8;
@@ -390,4 +407,24 @@ textarea {
 .button-back {
     display: flex;
     justify-content: center;
+}
+.event-column-right-location {
+    width: 20vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+//////////////////////////////////// Anchors in navbar
+.myEvents,
+.profile,
+.logout,
+.signup,
+.login {
+    border: solid #ffffff;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 20px;
+    padding: 5px;
 }

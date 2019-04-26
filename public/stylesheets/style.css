@@ -80,6 +80,9 @@ button:hover {
   text-decoration: none;
   text-align: center; }
 
+.swipe-titles {
+  font-size: 40px; }
+
 .user-bar {
   color: #ffffff;
   font-family: Lato;
@@ -167,7 +170,8 @@ button:hover {
   align-items: center;
   margin-bottom: 3px; }
 
-.button-attending-event, .button-going {
+.button-attending-event,
+.button-going {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -180,7 +184,8 @@ button:hover {
   border: 0px solid #000000;
   border-radius: 2px; }
 
-.button-attending-event p, .button-going p {
+.button-attending-event p,
+.button-going p {
   margin-right: 10px; }
 
 .today {
@@ -227,13 +232,16 @@ button:hover {
   background-color: #03396c; }
 
 #profile {
-  background-color: #6b5b95; }
+  background-color: #a52a2a; }
 
 #edit-profile {
   background-color: #3e4444; }
 
 #edit-event {
   background-color: #ff5733; }
+
+#add-event {
+  background-color: #c7c625; }
 
 .profile-container .title {
   margin-bottom: 40px; }
@@ -263,6 +271,13 @@ textarea {
 .error-message {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #000000; }
+
+.event-yourevents {
+  background-color: #f2ae72;
+  color: #000000; }
+
+.title-yourevents {
+  margin: 40px 0; }
 
 .info-event-wrapper {
   display: flex;
@@ -311,5 +326,23 @@ textarea {
 .button-back {
   display: flex;
   justify-content: center; }
+
+.event-column-right-location {
+  width: 20vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.myEvents,
+.profile,
+.logout,
+.signup,
+.login {
+  border: solid #ffffff;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 20px;
+  padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */
