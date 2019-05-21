@@ -1,5 +1,9 @@
 # oi
 
+App showing parties for today, tomorrow and after tomorrow in Zürich
+Stack used: Node.js, Express.js, GraphQL API, passport.js, Handlebars, HTML & CSS
+
+
 ROUTES
 
 home '/'
