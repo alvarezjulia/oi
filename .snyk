@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -188,3 +188,64 @@ patch:
         patched: '2019-11-04T09:49:59.521Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-11-04T09:49:59.521Z'
+  SNYK-JS-LODASH-567746:
+    - heroku > cli-ux > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @oclif/plugin-update > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @oclif/plugin-plugins > cli-ux > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-webhooks-v5 > heroku-cli-util > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-pipelines-v5 > inquirer > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-config > edit-string > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-pg-v5 > @heroku-cli/plugin-addons > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - node-sass-middleware > node-sass > sass-graph > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-webhooks-v5 > @heroku-cli/command > cli-ux > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-pg-v5 > @heroku-cli/plugin-addons > heroku-cli-util > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-ps-exec > heroku-exec-util > heroku-cli-util > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-ci-v5 > @heroku-cli/plugin-pipelines > inquirer > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - node-sass-middleware > node-sass > gaze > globule > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/ruby-semver > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - heroku > @heroku-cli/plugin-ci-v5 > @heroku-cli/plugin-run-v5 > @heroku-cli/command > cli-ux > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-05-01T05:28:46.621Z'
