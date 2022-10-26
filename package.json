@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=oi:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk-protect",
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
@@ -26,11 +26,11 @@
     "moment": "^2.24.0",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
-    "node-sass-middleware": "^0.11.0",
+    "node-sass-middleware": "^1.0.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.5.0",
-    "snyk": "^1.241.0"
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
