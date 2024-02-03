@@ -22,7 +22,7 @@
     "express-session": "^1.15.6",
     "graphql-request": "^1.8.2",
     "hbs": "^4.0.1",
-    "heroku": "^7.22.10",
+    "heroku": "^8.0.2",
     "moment": "^2.24.0",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
